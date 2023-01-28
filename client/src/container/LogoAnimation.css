@@ -126,6 +126,9 @@ img{
     .animate {
 		font-size: 24px;
 		font-weight: 900;
-		
+	}
+	img{
+		width: 180px;
+		height: 180px;
 	}
 }
