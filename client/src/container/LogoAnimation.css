@@ -114,7 +114,6 @@
 img{
 	width: 250;
 	height: 250px;
-	margin-top: 90px;
 	opacity: 1;
   	transition: opacity 1s ease-in;
 }
@@ -126,6 +125,7 @@ img{
     .animate {
 		font-size: 24px;
 		font-weight: 900;
+		margin: 40px 0 0;
 	}
 	img{
 		width: 180px;
