@@ -1,0 +1,42 @@
+
+
+.card {
+  font-size: 14pt;
+  position: relative;
+  margin: 6px auto;
+  max-width: 600px;
+  width: 96vw;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.2);
+  padding: 0.75rem 1rem;
+  z-index: -1;
+}
+.card p {
+  margin-top: 0;
+}
+
+blockquote {
+  margin: 0;
+  font-style: italic;
+}
+blockquote p::before {
+  content: "“";
+  font-family: serif;
+  font-size: 15rem;
+  color: #134ead;
+  position: absolute;
+  top: -50px;
+  left: -35px;
+  opacity: 0.1;
+}
+
+.name {
+  margin: 0;
+  color: #e0597c;
+}
+
+.title {
+  font-size: 0.75rem;
+  margin: 0;
+}
