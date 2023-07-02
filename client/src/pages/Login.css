@@ -15,7 +15,7 @@
   }
   
   a {
-    color: white;
+    color: rgb(255, 166, 0);
     text-decoration: none;
     font-weight: bold;
     outline: none;
@@ -69,7 +69,6 @@
   h3 {
     color: #d61e2d;
     font-size: 14px;
-    line-height: 18px;
     margin: 4px;
   }
   

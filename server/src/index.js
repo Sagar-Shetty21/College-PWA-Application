@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const database = require('./config/database');
 const authentication = require('./routes/authentication');
+const manageusers = require('./routes/manage-users');
+const queries = require('./routes/queries');
 const cors = require('cors');
 
 const app = express();
@@ -15,6 +17,8 @@ app.use(express.json());
 database.connect();
 
 app.use('/authentication', authentication);
+app.use('/manage-users', manageusers);
+app.use('/queries', queries)
 
 // start the server
 app.listen(8080, () => {

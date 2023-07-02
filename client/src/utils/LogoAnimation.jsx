@@ -8,25 +8,33 @@ const LogoAnimation = () => {
     useEffect(() => {
       setTimeout(() => {
         setShow(false);
-      },4500);
-      setTimeout(() => {
-        document.querySelector("img.logo-img").style.opacity = "0";
-      },2500)
-      setTimeout(() => {
-        document.querySelector("#logo").style.opacity = "0";
-      },3000)
+      },3500);
+
+      const revealText = document.querySelector(".reveal");
+      let letters = revealText.textContent.split("");
+      revealText.textContent = "";
+      let middle = letters.filter(e => e !== " ").length / 2;
+      letters.forEach((letter, i) => {
+        let span = document.createElement("span");
+        span.textContent = letter;
+        span.style.animationDelay = `${0.3 + Math.abs(i - middle) * 0.1}s`;
+        revealText.append(span);
+      });
     },[]);
 
     if(!show) return null;
 
+    
+
     return (
       <div id="logo">
-        <img src="../scc-logo.jpg" alt="logo-img" className="logo-img"></img>
-        <div class="animate seven">
-          <span>s</span><span>i</span><span>l</span><span>i</span><span>c</span><span>o</span><span>n</span> &nbsp;
-          <span>c</span><span>i</span><span>t</span><span>y</span> &nbsp;
-          <span>c</span><span>o</span><span>l</span><span>l</span><span>e</span><span>g</span><span>e</span>
-		    </div>
+        <span className="word1">
+          <p className="split">SILICON</p>
+          <p className="split">SILICON</p>
+        </span>
+        <span className="word2">
+          <div className="reveal">CAMPUS</div>
+        </span>
       </div>
     );
   }

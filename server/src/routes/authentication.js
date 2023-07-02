@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 
-// endpoint to handle /register requests
+                                   /* user registration */
 router.post('/register', (req, res) => {
     const { idNumber, name, gender, section, designation, email, phone, password, type } = req.body;
     // insert the data into the database
@@ -58,6 +58,7 @@ router.get('/verifyid', (req,res) => {
         database.query(`SELECT * FROM all_staffs WHERE staff_id = '${idNumber}'`,(err, result) => {
             if(err){
                 res.status(500).json({ error: err });
+                console.log(err);
             }else if(result.length === 0){
                 res.status(404).json({ error: {code: 'ID number not found in database'} });
             }else{
@@ -67,7 +68,7 @@ router.get('/verifyid', (req,res) => {
     }
 });
 
-
+                               /*  user login */
 router.post('/login', (req,res) => {
     const {userId, password} = req.body;
     //search for the user in database
@@ -118,6 +119,34 @@ function verifyToken(req,res,next) {
 }
 
 
+
+
+
+
+
+
+                                      /* ADMIN ROUTES */
+
+
+router.post('/login/admin', (req,res) => {
+    const {userId, password} = req.body;
+    
+    console.log(req.body)
+    database.query(`
+        SELECT * 
+        FROM admins
+        WHERE admin_id = '${userId}' AND password = '${password}'
+    `,(err, result) =>{
+        console.log(result[0])
+        if(err){
+            res.status(500).json({ error: err });
+        }if(!result[0]){
+            res.status(400).json("User not authorized");
+        }else{
+            res.status(200).json(result[0]);
+        }
+    })
+})
 
 
 

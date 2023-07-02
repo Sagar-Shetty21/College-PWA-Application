@@ -10,6 +10,7 @@ import Layout from './components/global/Layout';
 import Home from './pages/Home';
 import Notifications from './pages/Notifications';
 import Queries from './pages/Queries';
+import CreateQueries from './pages/CreateQuery'
 import RequireAuth from './utils/RequireAuth';
 import Profile from './pages/Profile';
 import SocialMedia from './pages/SocialMedia';
@@ -30,6 +31,7 @@ function App() {
             <Route path="/home" element={<Layout><Home/></Layout>}/>
             <Route path="/notifications" element={<Layout><Notifications/></Layout>}/>
             <Route path="/queries" element={<Layout><Queries/></Layout>}/>
+            <Route path="/create_query" element={<Layout><CreateQueries/></Layout>}/>
             <Route path="/profile" element={<Layout><Profile/></Layout>}/>
             <Route path="/notes" element={<Layout><Notes/></Layout>}/>
             <Route path="/social" element={<Layout><SocialMedia/></Layout>}/>

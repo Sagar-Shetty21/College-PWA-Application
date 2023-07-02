@@ -1,0 +1,11 @@
+
+
+.create-btn {
+    margin: 18px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 12px 40px;
+    border-radius: 0px 12px 0px 12px;
+    background-color: orange;
+}

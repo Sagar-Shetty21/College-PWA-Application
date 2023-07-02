@@ -1,0 +1,28 @@
+
+
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 80px);
+}
+
+.card{
+    background-color: rgb(218, 241, 234);
+    border-color: black;
+    margin: 26px;
+    padding: 44px;
+    border-radius: 8px;
+    font-size: 38px;
+    font-weight: 800;
+}
+
+.card span {
+    font-size: 22px;
+    font-weight: 400;
+    background-color: rgb(178, 220, 227);
+    padding: 7px;
+    border-radius: 5px;
+}

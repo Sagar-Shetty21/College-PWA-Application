@@ -9,6 +9,7 @@ hr{
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  box-shadow: 4px 3px 4px rgba(0, 0, 0, 0.2);
 }
 
 .nav-title {
@@ -16,6 +17,7 @@ hr{
   font-weight: 600;
   padding-bottom: 8px;
   padding-left: 22px;
+  
 }
 
 .menu-bars {
@@ -35,11 +37,14 @@ hr{
   top: 0;
   left: -100%;
   transition: 850ms;
+  z-index: 15000;
+  
 }
 
 .nav-menu.active {
   left: 0;
   transition: 450ms;
+  box-shadow: 4px 3px 4px rgba(0, 0, 0, 0.2);
 }
 
 .nav-text {

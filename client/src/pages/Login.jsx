@@ -16,7 +16,8 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:8080/authentication/login`, {
+    var ipAddress = window.location.hostname;
+    fetch(`http://${ipAddress}:8080/authentication/login`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

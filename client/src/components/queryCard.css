@@ -1,0 +1,40 @@
+
+
+.card-wrapper{
+    height: 180px;
+}
+
+.card{
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.subject {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 32px;
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+.description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: grey;
+    font-size: 18px;
+}
+
+.student-name {
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    font-weight: 700;
+    padding: 6px;
+    color: rgb(243, 161, 85)
+}

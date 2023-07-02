@@ -1,0 +1,75 @@
+
+
+.page-body {
+    width: 100vw;
+    height: calc(100vh - 80px);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(171, 171, 172);
+}
+
+.form-container {
+    max-width: 500px;
+    max-height: 96%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid #071F25;
+    border-radius: 5px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .form-container::-webkit-scrollbar {
+    display: none;
+   }
+
+  /* Style the form fields */
+  
+ .form-container form input[type=text], select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 3px solid #071F25;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  /* Style the submit button */
+/* set initial state of submit button */
+input[type="submit"] {
+background-color: #4CAF50;
+border: 3px solid #071F25;
+color: white;
+padding: 10px 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+border-radius: 8px;
+transition: background-color 0.3s ease;
+}
+
+/* add hover effect */
+input[type="submit"]:hover {
+background-color: #3e8e41;
+}
+
+/* add animation effect when button is clicked */
+input[type="submit"]:active {
+animation-name: example;
+animation-duration: 0.5s;
+animation-fill-mode: forwards;
+}
+
+/* define animation */
+@keyframes example {
+from {background-color: #4CAF50;}
+to {background-color: #3e8e41;}
+}

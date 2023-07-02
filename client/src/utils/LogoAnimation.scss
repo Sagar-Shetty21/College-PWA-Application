@@ -1,0 +1,163 @@
+#logo{
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	opacity:1;
+	transition: opacity 1.5s ease-in;
+	background: -webkit-linear-gradient(to right, #4ecdc4, #556270);
+	background: linear-gradient(to right, #4ecdc4, #556270); 
+	z-index: 1000;
+}
+
+.word1{
+	color:rgb(40, 62, 226);
+	font-size: 64px;
+	margin: 0;
+	font-weight: 900;
+	position: relative;
+	display: grid;
+	white-space: nowrap;
+	opacity: 0;
+	transform: translateX(-100%);
+	animation: slide-in-right 2s ease-in-out forwards;
+	
+}
+
+.word2 {
+	font-size: 64px;
+	margin: 0;
+	font-weight: 700;
+	position: relative;
+	display: inline-block;
+	white-space: nowrap;
+	opacity: 0;
+	transform: translateX(-100%);
+	animation: slide-in-left 2s ease-in-out forwards;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes slide-in-right {
+	0% {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+	50% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+
+.split{
+	grid-area: 1/1/-1/-1;
+  }
+
+.split:nth-of-type(1){
+	clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+  }
+  
+.split:nth-of-type(2){
+	clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+	color: transparent;
+	background: -webkit-linear-gradient(177deg, rgb(73, 96, 229) 53%, rgb(28, 137, 226) 65%);
+	background: linear-gradient(177deg, rgb(40, 62, 226) 53%, rgb(70, 170, 237) 65%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	transform: translateX(-0.02em);
+  }
+  
+
+.reveal{
+	position: relative;
+	display: flex;
+	color: rgb(6, 59, 143);
+	font-size: 2.2rem;
+	font-weight: 800;
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+	white-space: pre;
+	margin-right: 18px;
+
+	span {
+		opacity: 0;
+		transform: scale(0);
+		animation: fade-in 2.4s forwards;
+	}
+	
+	&::before,
+	&::after {
+		position: absolute;
+		content: "";
+		top: 0;
+		height: 100%;
+		width: 2px;
+		background: white;
+		opacity: 0;
+		transform: scale(0);    
+	}
+	
+	&::before {
+		left: 50%;
+		animation: slide-left 1.5s cubic-bezier(0.7, -0.6, 0.3, 1.5) forwards;
+	}
+	
+	&::after {
+		right: 50%;
+		animation: slide-right 1.5s cubic-bezier(0.7, -0.6, 0.3, 1.5) forwards;
+	}
+}
+
+@keyframes fade-in {
+	to {
+	  opacity: 1;
+	  transform: scale(1);
+	}
+  }
+  
+  @keyframes slide-left {
+	to {
+	  left: -6%;
+	  opacity: 1;
+	  transform: scale(0.9);
+	}
+  }
+  
+  @keyframes slide-right {
+	to {
+	  right: -6%;
+	  opacity: 1;
+	  transform: scale(0.9);
+	}
+  }
+
+
+
+
+ /*   For smaller screens */
+
+@media (max-width: 600px) {
+    
+}
