@@ -28,6 +28,12 @@ const SidebarData = [
     cName: "nav-text",
   },
   {
+    title: "StudyChat",
+    path: "/social",
+    icon: <i class="fa-solid fa-comments"></i>,
+    cName: "nav-text",
+  },
+  {
     title: "Notes",
     path: "/notes",
     icon: <i class="fa-solid fa-book"></i>,

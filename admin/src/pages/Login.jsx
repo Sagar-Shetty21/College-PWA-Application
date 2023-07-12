@@ -33,7 +33,7 @@ const Login = () => {
           if (data.error) {
             console.log(data.error.code)
             alert("Server Error!")
-          }else if(data.is_admin){
+          }else if(data.admin_id){
             setAuth({...data, accessToken: data.accessToken})
             cookies.set('admin',{...data})
             toast.success("Logged in as admin")
