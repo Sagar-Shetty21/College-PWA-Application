@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import LoadingScreen from './utils/LoadingScreen';
 import App from './App';
 import { AuthProvider } from './context/AuthProvider';
+import { SharedStateProvider } from './context/sharedStateContext';
 
 
 
@@ -15,9 +16,11 @@ window.addEventListener('load', () => {
   root.render(
     <React.StrictMode>
       <AuthProvider>
+      <SharedStateProvider>
         <BrowserRouter>
           <App />
         </BrowserRouter>
+      </SharedStateProvider>
       </AuthProvider>
     </React.StrictMode>
   );

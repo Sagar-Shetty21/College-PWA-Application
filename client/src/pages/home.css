@@ -1,7 +1,7 @@
 .clg-card{
     margin: 8px;
     display: flex;
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     flex-direction: column;
     border-radius: 6px;
     padding: 4px;
@@ -40,7 +40,7 @@
     font-weight: 700;
     background-color: blue;
     color: beige;
-    padding: 4px;
+    padding: 2px;
     border-radius: 6px;
 }
 
@@ -48,7 +48,6 @@
     font-size: 18px;
     font-weight: 900;
     color: blue;
-
 }
 
 .sub-desc {
@@ -67,4 +66,35 @@
 
 body{
     background-color: #16213E;
+}
+
+
+.cards-flex{
+    display: flex;
+    padding: 4px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card-box{
+    margin: 10px;
+    transform: translateZ(20px);
+    transform-style: preserve-3d;
+    width: 42%;
+    height: auto;
+    border-radius: 20px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    place-items: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.541);
+    background: #757e974b;
 }

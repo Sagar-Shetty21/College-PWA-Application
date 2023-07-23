@@ -6,20 +6,30 @@ const LogoAnimation = () => {
     const [show, setShow] = useState(true);
 
     useEffect(() => {
-      setTimeout(() => {
-        setShow(false);
-      },3500);
+      const shouldShowSplashScreen = sessionStorage.getItem('showSplashScreen');
 
-      const revealText = document.querySelector(".reveal");
-      let letters = revealText.textContent.split("");
-      revealText.textContent = "";
-      let middle = letters.filter(e => e !== " ").length / 2;
-      letters.forEach((letter, i) => {
-        let span = document.createElement("span");
-        span.textContent = letter;
-        span.style.animationDelay = `${0.3 + Math.abs(i - middle) * 0.1}s`;
-        revealText.append(span);
-      });
+      if (!shouldShowSplashScreen) {
+        setTimeout(() => {
+          setShow(false);
+          sessionStorage.setItem('showSplashScreen', 'true');
+        },3500);
+  
+        const revealText = document.querySelector(".reveal");
+        let letters = revealText.textContent.split("");
+        revealText.textContent = "";
+        let middle = letters.filter(e => e !== " ").length / 2;
+        letters.forEach((letter, i) => {
+          let span = document.createElement("span");
+          span.textContent = letter;
+          span.style.animationDelay = `${0.3 + Math.abs(i - middle) * 0.1}s`;
+          revealText.append(span);
+        });
+      }else {
+        // If the flag exists, hide the splash screen immediately
+        setShow(false);
+      }
+
+      
     },[]);
 
     if(!show) return null;

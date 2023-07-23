@@ -11,7 +11,7 @@ const QuoteBox = () => {
         return response.json();
       })
       .then(function(data) {
-        setQuote(data[Math.floor(Math.random() * 1642) + 1]);
+        setQuote(data[Math.floor(Math.random() * 9) + 1]);
       });
   },[])
 

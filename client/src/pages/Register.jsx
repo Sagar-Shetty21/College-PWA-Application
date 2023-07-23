@@ -2,7 +2,7 @@ import {React, useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { RegisterPage, Container, SubmitButtonBox, SubmitButton, UserDetails, FormInput, Details, VerifyButtonBox, VerifyButton, FormInputBox, Title, RadioInput, AccTypeTitle, DotOne, DotTwo, Category, AccTypeLabel, LinkButton} from "./Register.style";
-
+import image from '../assets/user.png';
 
 
 const Register = () => {
@@ -40,7 +40,8 @@ const Register = () => {
               email: email,
               phone: phoneNumber,
               password: password,
-              type: accType
+              type: accType,
+              image: image
             })
           })
           .then(response => response.json())

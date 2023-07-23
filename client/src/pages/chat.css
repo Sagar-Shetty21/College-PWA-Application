@@ -1,0 +1,25 @@
+
+
+.chat{
+    width: 100%;
+    height: calc(100% - 48px);
+    padding: 8px;
+}
+
+.chat-box-container {
+    height: 100%;
+    width: 100%;
+    padding: 4px;
+    background-color: rgba(240, 248, 255, 0.733);
+    border-radius: 6px;
+    overflow-y: scroll;
+}
+
+.chat-list > * {
+    border-radius: 10px;
+    margin: 3px;
+    text-align: left;
+
+}
+
+

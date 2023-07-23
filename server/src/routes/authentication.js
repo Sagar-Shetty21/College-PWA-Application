@@ -7,12 +7,12 @@ require('dotenv').config();
 
                                    /* user registration */
 router.post('/register', (req, res) => {
-    const { idNumber, name, gender, section, designation, email, phone, password, type } = req.body;
+    const { idNumber, name, gender, section, designation, email, phone, password, type, image } = req.body;
     // insert the data into the database
     if(type === "student"){
         database.query(
-            'INSERT INTO registered_students (student_id, name, section, gender, email, phone, password) VALUES (?, ?, ?, ?, ?, ?, ?)',
-            [ idNumber, name, section, gender, email, phone, password ],
+            'INSERT INTO registered_students (student_id, name, section, gender, email, phone, password, profile_img) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+            [ idNumber, name, section, gender, email, phone, password, image ],
             (err, results) => {
                 if (err) {
                     console.log(err);
@@ -24,8 +24,8 @@ router.post('/register', (req, res) => {
         ); 
     }else{
         database.query(
-            'INSERT INTO registered_staffs (staff_id, name, designation, gender, email, phone, password) VALUES (?, ?, ?, ?, ?, ?, ?)',
-            [ idNumber, name, designation, gender, email, phone, password ],
+            'INSERT INTO registered_staffs (staff_id, name, designation, gender, email, phone, password, profile_img) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+            [ idNumber, name, designation, gender, email, phone, password, image ],
             (error, results) => {
                 if (error) {
                     console.log(error);
@@ -85,6 +85,7 @@ router.post('/login', (req,res) => {
         WHERE staff_id = '${userId}' AND password = '${password}') AS staff
         LIMIT 1    
     `,(err, result) =>{
+        console.log(err)
         let data = result[0] ? result[0] : null
         if(err){
             res.status(500).json({ error: err });
