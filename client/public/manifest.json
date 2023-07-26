@@ -17,12 +17,12 @@
           "sizes": "540x720"
       },
       {
-          "src": "./mobile2.png",
+          "src": "./mobile1.png",
           "type": "image/png",
           "sizes": "540x720"
       },
       {
-          "src": "./mobile3.png",
+          "src": "./mobile1.png",
           "type": "image/png",
           "sizes": "540x720"
       }
