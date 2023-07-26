@@ -32,7 +32,7 @@
         "name": "StudyChat",
         "short-name": "StudyChat",
         "description": "chat with your college mates and staffs",
-        "url": "/studyChat",
+        "url": "/chat",
         "icons": [{ "src": "./comments-solid.svg", "sizes": "96x96","type": "image/svg+xml","purpose": "any"}]
       }
     ],
