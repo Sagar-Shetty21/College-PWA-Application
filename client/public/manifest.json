@@ -5,9 +5,26 @@
     "icons": [
       {
         "src": "./pwa-logo.png",
-        "sizes": "480x480",
+        "sizes": "520x520",
         "type": "image/png",
         "purpose": "any maskable"
+      }
+    ],
+    "screenshots": [
+      {
+          "src": "./mobile1.png",
+          "type": "image/png",
+          "sizes": "540x720"
+      },
+      {
+          "src": "./mobile2.png",
+          "type": "image/png",
+          "sizes": "540x720"
+      },
+      {
+          "src": "./mobile3.png",
+          "type": "image/png",
+          "sizes": "540x720"
       }
     ],
     "start_url": "/",
