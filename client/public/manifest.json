@@ -30,14 +30,16 @@
     "shortcuts": [
       {
         "name": "StudyChat",
-        "url": "/chat"
+        "short_name": "Chat",
+        "url": "/chat",
+        "icons": [{ "src": "./comments-solid.png", "sizes": "96x96","type": "image/png","purpose": "any"}]
       }
     ],
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#ffffff",
-    "orientation": "any",
+    "orientation": "portrait",
     "scope": "/",
     "lang": "en-US",
     "serviceworker": {
