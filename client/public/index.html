@@ -2,18 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" type="image/png" href="./scc-logo-nobg.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="Silicon City College Application"
       content="web application for students and staffs of silicon city college"
     />
-    <title>Silicon App</title>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="./scc-logo-nobg.png" />
     <link href="./fontawesome-icons/css/all.css" rel="stylesheet">
+    <title>Silicon App</title>
   </head>
   <body>
     <div id="root"></div>
     <div id="portal"></div>
+    <script>
+      if('serviceWorker' in navigator) {
+        window.addEventListener('load', ()=>{
+          navigator.serviceWorker.register('./serviceWorker.js')
+            .then((reg) => console.log("ServiceWorker Registered : ", reg.scope))
+            .catch((err) => console.log("Error in ServiceWorker : ", err))
+          })
+        }
+    </script>
   </body>
 </html>

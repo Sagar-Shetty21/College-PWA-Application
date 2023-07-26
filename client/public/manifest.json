@@ -1,0 +1,23 @@
+{
+    "name": "Silicon City College",
+    "short_name": "Silicon Campus", 
+    "description": "One place for all college tasks!",
+    "icons": [
+      {
+        "src": "./scc-logo-nobg.png",
+        "sizes": "720x720",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "orientation": "any",
+    "scope": "/",
+    "lang": "en-US",
+    "serviceworker": {
+      "src": "./serviceWorker.js"
+    }
+  }

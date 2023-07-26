@@ -60,10 +60,11 @@ const NavBar = () => {
   const [sidebar, setSidebar] = useState(false);
   const { currentPageName, setCurrentPageName } = useContext(SharedStateContext);
 
-
   useEffect(() => {
     // Retrieve the active navigation item from browser storage
-    const storedActiveNavItem = sessionStorage.getItem('activeNavItem');
+    var storedActiveNavItem = sessionStorage.getItem('activeNavItem');
+
+    !storedActiveNavItem && (storedActiveNavItem = "Home");
 
     if (storedActiveNavItem) {
       setCurrentPageName(storedActiveNavItem);
@@ -85,12 +86,10 @@ const NavBar = () => {
     sessionStorage.setItem('activeNavItem', item);
   };
 
- 
-
   const closeSidebar = () => {
     setSidebar(false);
   };
-  console.log(currentPageName)
+
   return (
     <div>
         <div className="navbar">
