@@ -33,7 +33,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div className="home-container" >
       <div className="clg-card">
         <div className="logo-title">
           <img className="clg-logo" src="../scc-logo-nobg.png" alt="clg-logo" />
@@ -56,7 +56,7 @@ const Home = () => {
       </div>
       <hr/>
       <QuoteBox/>
-    </>
+    </div>
   )
 }
 

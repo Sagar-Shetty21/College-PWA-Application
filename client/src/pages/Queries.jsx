@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from 'react'
 import './queries.css'
 import { Link } from 'react-router-dom'
-import QueryCard from '../components/home/QueryCard'
+import QueryCard from '../components/queries/QueryCard'
 
 const Queries = () => {
 
