@@ -4,8 +4,8 @@
     "description": "One place for all college tasks!",
     "icons": [
       {
-        "src": "./scc-logo-nobg.png",
-        "sizes": "720x720",
+        "src": "./pwa-logo.png",
+        "sizes": "481x512",
         "type": "image/png",
         "purpose": "any maskable"
       }
