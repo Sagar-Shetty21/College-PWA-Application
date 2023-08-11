@@ -16,6 +16,24 @@ router.get('/get_all_public_queries', (req, res) => {
 });
 
 
+router.post('/add_new_query', (req,res) => {
+  const {idNumber, name, subject, description}= req.body;
+  
+  database.query(
+    'INSERT INTO queries (student_id, student_name, subject, description, is_resolved) VALUES (?, ?, ?, ?, ?)',
+    [ idNumber, name, subject, description, 0 ],
+    (err, results) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send({ err });
+        } else {
+            res.status(200).send({ message: 'Query Submitted Successfully' });
+        }
+    }
+  ); 
+})
+
+
 
 
 module.exports = router;

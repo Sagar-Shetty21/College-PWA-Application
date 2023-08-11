@@ -3,6 +3,8 @@ import './createQuery.css';
 import { Link } from "react-router-dom";
 import { toast } from 'react-toastify';
 import useAuth from '../../utils/hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
+
 
 const CreateQuery = () => {
 
@@ -11,12 +13,13 @@ const CreateQuery = () => {
   const [regId,setRegId] = useState(auth.student_id);
   const [sub,setSub] = useState(auth.name);
   const [desc,setDesc] = useState(auth.name);
+  const navigate = useNavigate();
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    fetch("http://localhost:8080/authentication/register", {
+    fetch("http://localhost:8080/queries/add_new_query", {
             method: "POST",
             headers: {
               'Content-Type': 'application/json'
@@ -32,6 +35,7 @@ const CreateQuery = () => {
           .then(data => {
               if(data.message) {
                 toast.success(data.message)
+                navigate("/queries");
               }
               else if(data.err.code === "ER_DUP_ENTRY") {
                 toast.warning("User with this ID number already exists.")
