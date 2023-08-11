@@ -10,7 +10,7 @@ import Layout from './components/global/Layout';
 import Home from './pages/Home';
 import Notifications from './pages/Notifications';
 import Queries from './pages/Queries';
-import CreateQueries from './pages/CreateQuery';
+import CreateQueries from './components/queries/CreateQuery';
 import RequireAuth from './utils/RequireAuth';
 import Profile from './pages/Profile';
 import Forms from './pages/Forms';

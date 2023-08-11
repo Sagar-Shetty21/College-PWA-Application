@@ -35,9 +35,9 @@ const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "Forms and Surveys",
+    title: "Forms",
     path: "/forms",
-    icon: <i class="fa-brands fa-wpforms"></i>,
+    icon: <i class="fa-solid fa-rectangle-list"></i>,
     cName: "nav-text",
   },
   {
