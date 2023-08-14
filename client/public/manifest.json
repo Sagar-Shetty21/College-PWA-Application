@@ -5,7 +5,7 @@
     "icons": [
       {
         "src": "./pwa-logo.png",
-        "sizes": "520x520",
+        "sizes": "196x196",
         "type": "image/png",
         "purpose": "any maskable"
       }
