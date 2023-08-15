@@ -4,6 +4,7 @@ const database = require('./config/database');
 const authentication = require('./routes/authentication');
 const manageusers = require('./routes/manage-users');
 const queries = require('./routes/queries');
+const admindashboard = require('./routes/admin-dashboard')
 const cors = require('cors');
 
 const app = express();
@@ -18,7 +19,8 @@ database.connect();
 
 app.use('/authentication', authentication);
 app.use('/manage-users', manageusers);
-app.use('/queries', queries)
+app.use('/queries', queries);
+app.use('/admin-dashboard',admindashboard);
 
 // start the server
 app.listen(8080, () => {

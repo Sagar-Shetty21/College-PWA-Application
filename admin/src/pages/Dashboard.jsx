@@ -4,10 +4,26 @@ import PopupModal from '../modals/popupModal';
 
 const Dashboard = () => {
 
-  const [allStaffs, setAllStaffs] = useState(200);
-  const [regStaffs, setRegStaffs] = useState(20);
-  const [allStudents, setAllStudents] = useState(14);
-  const [regStudents, setRegStudents] = useState(34);
+  var [data,setData] = useState({});
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/admin-dashboard/get_details', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        const temp = await response.json();
+        setData(temp)
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, []);
+
 
   const [active, setActive] = useState(true);
 
@@ -18,23 +34,23 @@ const Dashboard = () => {
   return (
     <div className="container">
       <div className="card ">
-        <span>Number of staffs in database</span><br/>
-        {allStaffs}
+        Number of staffs in database<br/>
+        <span>{data.totalStaffs}</span>
       </div>
       <div className="card ">
-        <span>Registered staffs</span><br/>
-        {regStaffs}
+        Registered staffs<br/>
+        <span>{data.registeredStaffs}</span>
       </div>
       <div className="card ">
-        <span>Number of students in database</span><br/>
-        {allStudents}
+        Number of students in database<br/>
+        <span>{data.totalStudents}</span>
       </div>
       <div className="card ">
-        <span>Registered students</span><br/>
-        {regStudents}
+        Registered students<br/>
+        <span>{data.registeredStudents}</span>
       </div>
-      {active ? <PopupModal active bg="yellow" toggleActive={handleClick}>
-        <h1>wwe</h1>
+      {active ? <PopupModal active bg="grey" toggleActive={handleClick}>
+        <h1>Welcome Back Admin!</h1>
       </PopupModal>:null}
     </div>
   )

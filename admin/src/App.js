@@ -15,6 +15,8 @@ import EditStaff from './pages/EditStaff';
 import AddStudent from './pages/AddStudent';
 import RemoveStudent from './pages/RemoveStudent';
 import EditStudent from './pages/EditStudent';
+import ActiveQueries from './pages/ActiveQueries';
+import ResolvedQueries from './pages/ResolvedQueries';
 
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
           <Route path="/addStudent" element={<Layout><AddStudent/></Layout>}/>
           <Route path="/removeStudent" element={<Layout><RemoveStudent/></Layout>}/>
           <Route path="/editStudent" element={<Layout><EditStudent/></Layout>}/>
+          <Route path="/activeQueries" element={<Layout><ActiveQueries/></Layout>}/>
+          <Route path="/resolvedQueries" element={<Layout><ResolvedQueries/></Layout>}/>
         </Route>
       </Routes>
       <ToastContainer 

@@ -48,7 +48,7 @@ const CreateQuery = () => {
   return (
     <div className="form-container">
         <div className="create-query-heading">Create a new query!</div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="create-query-form">
         
                 <label for="name">Name: <input required readonly disabled id="name" type="text" name="name" value={name}/></label>
                 <label for="reg-no">Register ID: <input required readonly disabled id="reg-no" type="text" name="register number" value={regId}/></label>

@@ -22,14 +22,14 @@
 
 
 
-form{
+.create-query-form{
     width: 100%;
     margin: 0 auto;
     padding: 22px;
 }
 
 
-input, textarea{
+.create-query-form > input, textarea{
     width: 100%;
     margin-top: 4px;
     margin-bottom: 18px;
@@ -37,20 +37,18 @@ input, textarea{
     margin-left: 0;
     min-height: 2.4em;
     color: #ffffff;
-}
-
-textarea{
-    resize: vertical;
-    overflow-x: hidden;
-}
-
-input, textarea{
     background-color: #191936;
     border: 1px solid #0a0a23;
     padding: 10px
 }
 
-input[type="submit"]{
+.create-query-form > textarea{
+    resize: vertical;
+    overflow-x: hidden;
+}
+
+
+.create-query-form > input[type="submit"]{
     width:60%;
     margin: 1em auto;
     height: 2em;
@@ -60,7 +58,7 @@ input[type="submit"]{
     min-width: 300px;
 }
 
-input[type="submit"]:active{
+.create-query-form > input[type="submit"]:active{
     background-color: #559c75;
 }
 
