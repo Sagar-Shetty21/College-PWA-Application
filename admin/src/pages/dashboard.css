@@ -5,15 +5,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: calc(100vh - 80px);
+    border: 6px solid rgb(148, 148, 148);
+    width: calc(100%-4px);
+    margin: 4px;
 }
 
 .card{
     background-color: rgb(218, 241, 234);
     border-color: black;
     margin: 26px;
-    padding: 44px;
+    padding: 22px;
     border-radius: 8px;
     font-weight: 600;
     font-size: 26px;

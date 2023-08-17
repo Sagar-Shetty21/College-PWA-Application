@@ -47,6 +47,22 @@ router.post('/addstaff', (req,res) => {
                   /*   Add  student     */
 
 
+router.post('/addstudent', (req,res) => {
+    const {regId, name, section, gender} = req.body;
+    
+    console.log(req.body)
+    database.query(`
+    INSERT INTO all_students (student_id, name, section, gender) VALUES ('${regId}', '${name}', '${section}', '${gender}');
+    `,(err, results) =>{
+        console.log(results)
+        if(err){
+            res.status(500).json({ err });
+        }else{
+            res.status(200).json("User added successfully!");
+        }
+    })
+})                
+
 
 
                   /*   remove staff    */

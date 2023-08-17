@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./addStaff.css"
 
+
 const AddStaff = () => {
 
   const [regId,setRegId] = useState('');
@@ -48,9 +49,9 @@ const AddStaff = () => {
           <label for="designation">Designation</label>
           <select id="designation" name="designation" required onChange={(e) => setDesignation(e.target.value)} value={designation}>
             <option value="">Choose Designation</option>
-            <option value="male">Principle</option>
-            <option value="female">Senior Professor</option>
-            <option value="female">Assistant Professor</option>
+            <option value="Principle">Principle</option>
+            <option value="Senior Professor">Senior Professor</option>
+            <option value="Assistant Professor">Assistant Professor</option>
           </select>
 
           <label for="gender">Gender</label>

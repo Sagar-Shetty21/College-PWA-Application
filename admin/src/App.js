@@ -11,10 +11,8 @@ import Event from './pages/Event';
 import Update from './pages/Update';
 import AddStaff from './pages/AddStaff';
 import RemoveStaff from './pages/RemoveStaff';
-import EditStaff from './pages/EditStaff';
 import AddStudent from './pages/AddStudent';
 import RemoveStudent from './pages/RemoveStudent';
-import EditStudent from './pages/EditStudent';
 import ActiveQueries from './pages/ActiveQueries';
 import ResolvedQueries from './pages/ResolvedQueries';
 
@@ -32,10 +30,8 @@ function App() {
           <Route path="/post/update" element={<Layout><Update/></Layout>}/>
           <Route path="/addStaff" element={<Layout><AddStaff/></Layout>}/>
           <Route path="/removeStaff" element={<Layout><RemoveStaff/></Layout>}/>
-          <Route path="/editStaff" element={<Layout><EditStaff/></Layout>}/>
           <Route path="/addStudent" element={<Layout><AddStudent/></Layout>}/>
           <Route path="/removeStudent" element={<Layout><RemoveStudent/></Layout>}/>
-          <Route path="/editStudent" element={<Layout><EditStudent/></Layout>}/>
           <Route path="/activeQueries" element={<Layout><ActiveQueries/></Layout>}/>
           <Route path="/resolvedQueries" element={<Layout><ResolvedQueries/></Layout>}/>
         </Route>
