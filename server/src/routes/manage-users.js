@@ -23,6 +23,16 @@ router.get('/allstaffs', (req, res) => {
                   /*   load student data     */
 
 
+router.get('/allstudents', (req, res) => {
+  database.query('SELECT * FROM all_students', (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    } else {
+      res.status(200).send(results);
+    }
+  });
+});
 
 
 
@@ -68,6 +78,7 @@ router.post('/addstudent', (req,res) => {
                   /*   remove staff    */
   router.post('/removestaff', (req, res) => {
     const regno = req.body.regno
+    console.log(req.body);
     database.query(`DELETE FROM all_staffs WHERE staff_id = '${regno}'`, (error, results, fields) => {
     if (error) throw error
       res.send(results)
@@ -78,16 +89,45 @@ router.post('/addstudent', (req,res) => {
 
                    /*   remove student    */
 
+router.post('/removestudent', (req, res) => {
+    const regno = req.body.regno
+    console.log(req.body);
+    database.query(`DELETE FROM all_students WHERE student_id = '${regno}'`, (error, results, fields) => {
+    if (error) throw error
+      res.send(results)
+    })
+  })
+
+
+//     search staff
+
+router.post('/getstaff', (req,res) => {
+  const searchData = req.body.regno
+  database.query(`SELECT * FROM all_staffs WHERE staff_id LIKE '%${searchData}%';`, (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    } else {
+      res.status(200).send(results);
+    }
+  })
+})
 
 
 
-                    /*   edit staff    */
+//     search student
 
-
-
-
-                     /*   edit student    */
-
+router.post('/getstudent', (req,res) => {
+  const searchData = req.body.regno
+  database.query(`SELECT * FROM all_students WHERE student_id LIKE '%${searchData}%';`, (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    } else {
+      res.status(200).send(results);
+    }
+  })
+})
 
 
 

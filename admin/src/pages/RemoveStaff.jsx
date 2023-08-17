@@ -23,13 +23,8 @@ const RemoveStaff = () => {
   }, []);
 
 
-  const handleClick = () => {
-    setActive(!active);
-  }
-
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log(search)
     fetch('http://localhost:8080/manage-users/getstaff', {
       method: 'POST',
       headers: {
@@ -39,25 +34,36 @@ const RemoveStaff = () => {
       body: JSON.stringify({ regno: search })
     })
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => setTableData(data))
       .catch(error => console.error(error))
 
   }
 
-  const handleDelete = () => {
-    fetch('http://localhost:8080/manage-users/removestaff', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      
-      body: JSON.stringify({ regno: selectedUser.staff_id })
-    })
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error(error))
-  }
-
+  const handleDelete = async () => {
+    try {
+      // Delete user
+      const deleteResponse = await fetch('http://localhost:8080/manage-users/removestaff', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ regno: selectedUser[1] })
+      });
+      const deleteData = await deleteResponse.json();
+      console.log(deleteData);
+  
+      // Close the modal
+      setActive(false);
+  
+      // Fetch updated data
+      const fetchDataResponse = await fetch('http://localhost:8080/manage-users/allstaffs');
+      const fetchData = await fetchDataResponse.json();
+      setTableData(fetchData);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
   return (
     <div className="remove-staff-page">
       <div class="search-local">
@@ -82,7 +88,7 @@ const RemoveStaff = () => {
 
       {tableData.map(item => {
         return(
-          <tr onClick={() => {
+          <tr key={item.staff_id} onClick={() => {
             setActive(true);
             setSelectedUser([item.name,item.staff_id]);
           }}>
@@ -95,11 +101,24 @@ const RemoveStaff = () => {
       })}
         </table>
       </div>
-      {active ? <PopupModal active bg="orange" toggleActive={handleClick}>
+      {active ? <PopupModal active bg="orange" toggleActive={() => setActive(!active)}>
         <h1>Are you sure you want to delete this user?</h1>
         <br/><br/>
         <h2>{selectedUser[0]}</h2>
-        <button onClick={handleDelete}>Confirm</button>
+        <button 
+          onClick={handleDelete}
+          style={{
+            backgroundColor: 'red',
+            color: 'white',
+            padding: '10px 20px',
+            margin: '8px',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer'
+          }}
+        >
+          Confirm
+        </button>
       </PopupModal>:null}
     </div>
   )
