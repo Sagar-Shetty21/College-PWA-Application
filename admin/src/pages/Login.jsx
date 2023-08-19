@@ -17,7 +17,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:8080/authentication/login/admin`, {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/authentication/login/admin`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

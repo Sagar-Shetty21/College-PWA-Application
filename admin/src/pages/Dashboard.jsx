@@ -9,7 +9,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/admin-dashboard/get_details', {
+        const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/admin-dashboard/get_details`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json'
@@ -25,11 +25,11 @@ const Dashboard = () => {
   }, []);
 
 
-  const [active, setActive] = useState(true);
+/*   const [active, setActive] = useState(true);
 
   const handleClick = () => {
     setActive(!active);
-  }
+  } */
 
   return (
     <div className="container">
@@ -49,9 +49,9 @@ const Dashboard = () => {
         Registered students<br/>
         <span>{data.registeredStudents}</span>
       </div>
-      {active ? <PopupModal active bg="grey" toggleActive={handleClick}>
+{/*       {active ? <PopupModal active bg="grey" toggleActive={handleClick}>
         <h1>Welcome Back Admin!</h1>
-      </PopupModal>:null}
+      </PopupModal>:null} */}
     </div>
   )
 }

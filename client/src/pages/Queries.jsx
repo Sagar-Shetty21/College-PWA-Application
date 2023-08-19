@@ -14,7 +14,7 @@ const Queries = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/queries/get_all_user_queries?student_id=${auth.student_id}`, {
+        const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/queries/get_all_user_queries?student_id=${auth.student_id}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json'

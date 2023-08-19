@@ -12,7 +12,7 @@ const AddStudent = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:8080/manage-users/addstudent`, {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/manage-users/addstudent`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

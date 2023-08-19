@@ -7,7 +7,6 @@ import { AuthProvider } from './context/AuthProvider';
 import { SharedStateProvider } from './context/sharedStateContext';
 
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(<LoadingScreen />);

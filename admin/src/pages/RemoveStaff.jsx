@@ -13,7 +13,7 @@ const RemoveStaff = () => {
 
   
   useEffect(() => {
-    fetch('http://localhost:8080/manage-users/allstaffs')
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/manage-users/allstaffs`)
       .then(response => response.json())
       .then(data => {
         console.log(data);
@@ -25,7 +25,7 @@ const RemoveStaff = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    fetch('http://localhost:8080/manage-users/getstaff', {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/manage-users/getstaff`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ const RemoveStaff = () => {
   const handleDelete = async () => {
     try {
       // Delete user
-      const deleteResponse = await fetch('http://localhost:8080/manage-users/removestaff', {
+      const deleteResponse = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/manage-users/removestaff`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -56,7 +56,7 @@ const RemoveStaff = () => {
       setActive(false);
   
       // Fetch updated data
-      const fetchDataResponse = await fetch('http://localhost:8080/manage-users/allstaffs');
+      const fetchDataResponse = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/manage-users/allstaffs`);
       const fetchData = await fetchDataResponse.json();
       setTableData(fetchData);
     } catch (error) {

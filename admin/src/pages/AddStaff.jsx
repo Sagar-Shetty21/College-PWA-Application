@@ -11,7 +11,7 @@ const AddStaff = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:8080/manage-users/addstaff`, {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/manage-users/addstaff`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

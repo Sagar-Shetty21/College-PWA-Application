@@ -26,7 +26,7 @@ const Register = () => {
         toast.warning("Fill all input fields!")
       }else{
         if(password === confirmPassword){
-          fetch("http://localhost:8080/authentication/register", {
+          fetch(`${process.env.REACT_APP_API_ENDPOINT}/authentication/register`, {
             method: "POST",
             headers: {
               'Content-Type': 'application/json'
@@ -64,7 +64,7 @@ const Register = () => {
 
     async function verifyId(){
       if(accType) {
-        fetch(`http://localhost:8080/authentication/verifyid?idNumber=${idNumber}&accType=${accType}`, {
+        fetch(`${process.env.REACT_APP_API_ENDPOINT}/authentication/verifyid?idNumber=${idNumber}&accType=${accType}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json'

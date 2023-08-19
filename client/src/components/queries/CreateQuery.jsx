@@ -19,7 +19,7 @@ const CreateQuery = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    fetch("http://localhost:8080/queries/add_new_query", {
+    fetch(`${process.env.REACT_APP_API_ENDPOINT}/queries/add_new_query`, {
             method: "POST",
             headers: {
               'Content-Type': 'application/json'

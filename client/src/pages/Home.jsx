@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import QuoteBox from '../components/home/QuoteBox';
 import './home.css';
 import { Link } from "react-router-dom";
@@ -25,6 +25,10 @@ const Card = (props) => {
 const Home = () => {
 
   const { setCurrentPageName } = useContext(SharedStateContext);
+
+  useEffect(() => {
+    sessionStorage.setItem('activeNavItem', 'Home');
+  }, []);
 
   const handleNavItemClick = (item) => {
     setCurrentPageName(item);
