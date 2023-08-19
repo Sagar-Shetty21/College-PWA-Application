@@ -3,17 +3,21 @@ import './queryCard.css'
 
 const QueryCard = (data) => {
 
-    const expandCard = () => {
-        
-    }
+  const [isActive, setIsActive] = React.useState(false);
+
+  const clickCard = () => {
+      setIsActive(!isActive);
+  };
 
   return (
-    <div className="card-wrapper" onClick={expandCard}>
-        <div className="card">
-            <div className="subject">{data.data.subject}</div>
-            <div className="description">{data.data.description}</div>
-            <div className="student-name">raised by - {data.data.student_name}</div>
-        </div>
+    <div className={`query-card ${isActive ? 'cardActive' : ''}`}>
+        <section className="cardHeader" onClick={clickCard}>
+            <div class="cardHeaderTitle">{data.data.subject}</div>
+            <div class="cardHeaderSupportingText">{data.data.description}</div>
+        </section>
+        <section className="nonSharedContent">
+            {data.data.is_resolved === 0 && <div className="not-resolved-badge">No Response Yet!</div>}
+        </section>
     </div>
   )
 }

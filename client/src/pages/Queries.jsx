@@ -2,34 +2,38 @@ import React, { useState, useEffect} from 'react'
 import './queries.css'
 import { Link } from 'react-router-dom'
 import QueryCard from '../components/queries/QueryCard'
+import useAuth from '../utils/hooks/useAuth'
+
 
 const Queries = () => {
 
-  const [publicQueries, setPublicQueries] = useState([]);
+  const [userQueries, setUserQueries] = useState([]);
+  const {auth} = useAuth();
+
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/queries/get_all_public_queries', {
+        const response = await fetch(`http://localhost:8080/queries/get_all_user_queries?student_id=${auth.student_id}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json'
           }
         });
         const data = await response.json();
-        setPublicQueries(data);
+        setUserQueries(data);
       } catch (error) {
         console.error(error);
       }
     };
     fetchData();
   }, []);
-
+ 
 
   return (
     <div>
-      {publicQueries.map(query => (
-        <QueryCard key={`${query.subject}-${query.description}`} data={query}/>
+      {userQueries.map(query => (
+        <QueryCard key={query.id} data={query}/>
       ))}
       <Link to="/create_query"><div className="create-btn">Create Query</div></Link>
     </div>

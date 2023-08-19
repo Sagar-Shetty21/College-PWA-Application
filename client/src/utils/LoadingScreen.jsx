@@ -3,7 +3,7 @@ import './LoadingScreen.css';
 
 const LoadingScreen = () => {
     return (
-        <section>
+        <section className="loading-screen-section">
             <svg>
                 <filter id="gooey">
                     <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>

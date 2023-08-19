@@ -29,7 +29,7 @@
 }
 
 
-.create-query-form > input, textarea{
+.create-query-form > * > input, textarea{
     width: 100%;
     margin-top: 4px;
     margin-bottom: 18px;
@@ -39,10 +39,10 @@
     color: #ffffff;
     background-color: #191936;
     border: 1px solid #0a0a23;
-    padding: 10px
+    padding: 10px;
 }
 
-.create-query-form > textarea{
+.create-query-form > * > textarea{
     resize: vertical;
     overflow-x: hidden;
 }

@@ -6,15 +6,14 @@ import Login from './pages/Login';
 import Layout from './components/globals/Layout';
 import Dashboard from './pages/Dashboard';
 import RequireAuth from './utils/RequireAuth';
-import Notification from './pages/Notification';
-import Event from './pages/Event';
-import Update from './pages/Update';
 import AddStaff from './pages/AddStaff';
 import RemoveStaff from './pages/RemoveStaff';
 import AddStudent from './pages/AddStudent';
 import RemoveStudent from './pages/RemoveStudent';
 import ActiveQueries from './pages/ActiveQueries';
 import ResolvedQueries from './pages/ResolvedQueries';
+import AllPosts from './components/post/AllPosts';
+import NewPost from './components/post/NewPost';
 
 
 function App() {
@@ -25,9 +24,8 @@ function App() {
         <Route element={<RequireAuth/>}>
           <Route path="/" element={<Layout><Dashboard/></Layout>}/>
           <Route path="/dashboard" element={<Layout><Dashboard/></Layout>}/>
-          <Route path="/post/notification" element={<Layout><Notification/></Layout>}/>
-          <Route path="/post/event" element={<Layout><Event/></Layout>}/>
-          <Route path="/post/update" element={<Layout><Update/></Layout>}/>
+          <Route path="/post/all_posts" element={<Layout><AllPosts/></Layout>}/>
+          <Route path="/post/new_post" element={<Layout><NewPost/></Layout>}/>
           <Route path="/addStaff" element={<Layout><AddStaff/></Layout>}/>
           <Route path="/removeStaff" element={<Layout><RemoveStaff/></Layout>}/>
           <Route path="/addStudent" element={<Layout><AddStudent/></Layout>}/>

@@ -3,8 +3,9 @@ const database = require('../config/database');
 const router = express.Router();
 
 
-router.get('/get_all_public_queries', (req, res) => {
-      database.query(`SELECT * FROM queries WHERE is_private = 0`, (error, results) => {
+router.get('/get_all_user_queries', (req, res) => {
+      const id = req.query.student_id;
+      database.query(`SELECT * FROM queries WHERE student_id = \'${id}\'`, (error, results) => {
         if (error) {
             console.error(error);
             res.status(500).send('Internal Server Error');

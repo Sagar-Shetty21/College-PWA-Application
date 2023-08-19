@@ -17,21 +17,16 @@ export const SidebarData = [
     iconOpened: <i class="fa-solid fa-sort-up"/>,
     subNav: [
       {
-        title: 'Notification',
-        path: '/post/notification',
-        icon: <i class="fa-solid fa-message"/>,
+        title: 'All Posts',
+        path: '/post/all_posts',
+        icon: <i class="fa-solid fa-clone"/>,
         cName: 'sub-nav'
       },
       {
-        title: 'Event',
-        path: '/post/event',
-        icon: <i class="fa-solid fa-calendar"/>,
+        title: 'New Post',
+        path: '/post/new_post',
+        icon: <i class="fa-solid fa-square-plus"/>,
         cName: 'sub-nav'
-      },
-      {
-        title: 'Update',
-        path: '/post/update',
-        icon: <i class="fa-solid fa-square-pen"/>
       }
     ]
   },
