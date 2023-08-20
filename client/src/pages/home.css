@@ -84,10 +84,11 @@ body{
 }
 
 .card-box{
-    margin: 10px;
+    margin: 18px;
+    padding: 12px;
     transform: translateZ(20px);
     transform-style: preserve-3d;
-    width: 42%;
+    width: auto;
     height: auto;
     border-radius: 20px;
     display: -webkit-box;

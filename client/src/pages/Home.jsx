@@ -4,11 +4,6 @@ import './home.css';
 import { Link } from "react-router-dom";
 import Lottie from 'lottie-react';
 import studentsAnimation from '../assets/college_students_animation.json'; 
-import booksAnimation from '../assets/books_animation.json';
-import chatAnimation from '../assets/chat_animation.json';
-import formsAnimation from '../assets/forms_animation.json';
-import notificationAnimation from '../assets/notification_animation.json';
-import queryAnimation from '../assets/query_animation.json';
 import SharedStateContext from '../context/sharedStateContext'
 
 
@@ -17,7 +12,7 @@ const Card = (props) => {
 
   return (
       <Link to={path} className="card-box" onClick={onClick}>
-          <Lottie animationData={data} />
+          <img src={data} width="120" height="120"/>
       </Link>
   )
 }
@@ -52,14 +47,15 @@ const Home = () => {
       </div>
       <Lottie animationData={studentsAnimation} />
       <div className="cards-flex">
-        <Card data={notificationAnimation} path="/campus_news" onClick={() => handleNavItemClick('Campus News')} />
-        <Card data={chatAnimation} path="/chat" onClick={() => handleNavItemClick('StudyChat')}/>
-        <Card data={booksAnimation} path="/notes" onClick={() => handleNavItemClick('Notes')}/>
-        <Card data={formsAnimation} path="/forms" onClick={() => handleNavItemClick('Forms & Surveys')}/>
-        <Card data={queryAnimation} path="/queries" onClick={() => handleNavItemClick('Queries')}/>
+        <Card data="../assets/CampusNews.png" path="/campus_news" onClick={() => handleNavItemClick('Campus News')} />
+        <Card data="../assets/StudyChat.png" path="/chat" onClick={() => handleNavItemClick('StudyChat')}/>
+        <Card data="../assets/Notes.png" path="/notes" onClick={() => handleNavItemClick('Notes')}/>
+        <Card data="../assets/Forms.png" path="/forms" onClick={() => handleNavItemClick('Forms & Surveys')}/>
+        <Card data="../assets/Queries.png" path="/queries" onClick={() => handleNavItemClick('Queries')}/>
       </div>
       <hr/>
       <QuoteBox/>
+
     </div>
   )
 }
