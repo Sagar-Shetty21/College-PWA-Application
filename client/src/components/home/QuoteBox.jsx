@@ -16,7 +16,7 @@ const QuoteBox = () => {
   },[])
 
   return (
-    <div class="card">
+    <div className="quote-card">
       <blockquote>
         <p>{quote.text}</p>
       </blockquote>

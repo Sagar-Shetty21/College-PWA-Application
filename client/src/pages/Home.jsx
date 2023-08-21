@@ -52,6 +52,7 @@ const Home = () => {
         <Card data="../assets/Notes.png" path="/notes" onClick={() => handleNavItemClick('Notes')}/>
         <Card data="../assets/Forms.png" path="/forms" onClick={() => handleNavItemClick('Forms & Surveys')}/>
         <Card data="../assets/Queries.png" path="/queries" onClick={() => handleNavItemClick('Queries')}/>
+        <Card data="../assets/Profile.png" path="/profile" onClick={() => handleNavItemClick('Profle')}/>
       </div>
       <hr/>
       <QuoteBox/>
