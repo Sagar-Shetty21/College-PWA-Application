@@ -13,8 +13,6 @@ import Queries from './pages/Queries';
 import CreateQueries from './components/queries/CreateQuery';
 import RequireAuth from './utils/RequireAuth';
 import Profile from './pages/Profile';
-import Forms from './pages/Forms';
-import Notes from './pages/Notes';
 import Chat from './pages/Chat';
 
 function App() {
@@ -34,8 +32,6 @@ function App() {
             <Route path="/queries" element={<Layout><Queries/></Layout>}/>
             <Route path="/create_query" element={<Layout><CreateQueries/></Layout>}/>
             <Route path="/profile" element={<Layout><Profile/></Layout>}/>
-            <Route path="/notes" element={<Layout><Notes/></Layout>}/>
-            <Route path="/forms" element={<Layout><Forms/></Layout>}/>
             <Route path="/chat" element={<Layout><Chat/></Layout>}/>
           </Route>
         </Routes>

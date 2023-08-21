@@ -29,18 +29,6 @@ const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "Notes",
-    path: "/notes",
-    icon: <i class="fa-solid fa-book"></i>,
-    cName: "nav-text",
-  },
-  {
-    title: "Forms",
-    path: "/forms",
-    icon: <i class="fa-solid fa-rectangle-list"></i>,
-    cName: "nav-text",
-  },
-  {
     title: "Queries",
     path: "/queries",
     icon: <i class="fa-solid fa-clipboard-question"></i>,

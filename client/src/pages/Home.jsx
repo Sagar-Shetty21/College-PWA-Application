@@ -49,8 +49,6 @@ const Home = () => {
       <div className="cards-flex">
         <Card data="../assets/CampusNews.png" path="/campus_news" onClick={() => handleNavItemClick('Campus News')} />
         <Card data="../assets/StudyChat.png" path="/chat" onClick={() => handleNavItemClick('StudyChat')}/>
-        <Card data="../assets/Notes.png" path="/notes" onClick={() => handleNavItemClick('Notes')}/>
-        <Card data="../assets/Forms.png" path="/forms" onClick={() => handleNavItemClick('Forms & Surveys')}/>
         <Card data="../assets/Queries.png" path="/queries" onClick={() => handleNavItemClick('Queries')}/>
         <Card data="../assets/Profile.png" path="/profile" onClick={() => handleNavItemClick('Profle')}/>
       </div>

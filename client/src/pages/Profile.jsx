@@ -15,7 +15,7 @@ const Profile = () => {
   const [section, setSection] = useState(auth.section);
   const [semister, setSemister] = useState("");
   const [gender, setGender] = useState(auth.gender);
-  const [active, setActive] = useState("edit");
+  const [active, setActive] = useState("profile");
 
 
   const photoUpload = (e) => {
