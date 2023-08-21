@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import useAuth from '../utils/hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'universal-cookie';
+import LoadingScreen from '../utils/LoadingScreen';
 
 
 const Login = () => {
@@ -13,9 +14,12 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const cookies = new Cookies();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
+    setIsLoading(true);
+
     fetch(`${process.env.REACT_APP_API_ENDPOINT}/authentication/login`, {
           method: 'POST',
           headers: {
@@ -29,6 +33,7 @@ const Login = () => {
         })
         .then(response => response.json())
         .then(data => {
+          setIsLoading(false);
           if (data.error) {
             console.log(data.error.code)
             toast.error("Server Error!")
@@ -81,6 +86,7 @@ const Login = () => {
                 <Link to="/resetpassword">Forgot password?</Link>
             </div>
         </div>
+        {isLoading && <LoadingScreen />}
     </div>
   )
 }

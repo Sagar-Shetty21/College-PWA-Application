@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { RegisterPage, Container, SubmitButtonBox, SubmitButton, UserDetails, FormInput, Details, VerifyButtonBox, VerifyButton, FormInputBox, Title, RadioInput, AccTypeTitle, DotOne, DotTwo, Category, AccTypeLabel, LinkButton} from "./Register.style";
 import image from '../assets/user.png';
+import LoadingScreen from '../utils/LoadingScreen';
 
 
 const Register = () => {
@@ -17,10 +18,13 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [accType, setAccType] = useState('');
     const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(false);
+
 
   
     async function handleSubmit(event){
       event.preventDefault();
+      setIsLoading(true);
 
       if(document.querySelector('#readOnlyInput').value === ''){
         toast.warning("Fill all input fields!")
@@ -46,6 +50,7 @@ const Register = () => {
           })
           .then(response => response.json())
           .then(data => {
+              setIsLoading(false);
               if(data.message) {
                 toast.success(data.message)
                 navigate("/login")
@@ -64,6 +69,7 @@ const Register = () => {
 
     async function verifyId(){
       if(accType) {
+        setIsLoading(true);
         fetch(`${process.env.REACT_APP_API_ENDPOINT}/authentication/verifyid?idNumber=${idNumber}&accType=${accType}`, {
           method: 'GET',
           headers: {
@@ -72,6 +78,7 @@ const Register = () => {
         })
         .then(response => response.json())
         .then(data => {
+          setIsLoading(false);
           if (data.error) {
             toast.error(data.error.code)
           }else {
@@ -162,6 +169,7 @@ const Register = () => {
           </form>
           <LinkButton><Link to="/">Back to Login</Link></LinkButton>
         </Container>
+      {isLoading && <LoadingScreen />}
       </RegisterPage>
   )
 }
