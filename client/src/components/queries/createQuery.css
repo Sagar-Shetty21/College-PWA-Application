@@ -29,7 +29,7 @@
 }
 
 
-.create-query-form > * > input, textarea{
+.create-query-form > * > input,.create-query-form > * > textarea{
     width: 100%;
     margin-top: 4px;
     margin-bottom: 18px;

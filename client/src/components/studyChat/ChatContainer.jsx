@@ -1,41 +1,24 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import "react-chat-elements/dist/main.css";
 import { ChatList } from "react-chat-elements"
+import { useNavigate } from 'react-router';
 
-const ChatContainer = () => {
+const ChatContainer = ({list}) => {
 
-  const [chatList, setChatList] = useState([
-    {
-      avatar: 'https://avatars.githubusercontent.com/u/80540635?v=4',
-      alt: 'kursat_avatar',
-      title: 'Kursat',
-      subtitle: "Why don't we go to the No Way Home movie this weekend ?",
-      date: new Date(),
-      unread: 3,
-    },
-    {
-      avatar: 'https://avatars.githubusercontent.com/u/80540635?v=4',
-      alt: 'kursat_avatar',
-      title: 'minal',
-      subtitle: "Why don't wee this weekend ?",
-      date: new Date(),
-      unread: 3,
-    },
-    {
-      avatar: 'https://avatars.githubusercontent.com/u/80540635?v=4',
-      alt: 'kursat_avatar',
-      title: 'sagar',
-      subtitle: "this weekend ?",
-      date: new Date(),
-      unread: 8,
-    }
-  ]);
+  const navigate = useNavigate();
+
+  const handleClick = (id) => {
+    const route = `/chat/${id}`;
+    navigate(route);
+  }
 
   return (
     <div className='chat-box-container'>
         <ChatList
           className='chat-list'
-          dataSource={chatList} />
+          dataSource={list}
+          onClick={(e) => handleClick(e.id)}
+        />
     </div>
   )
 }

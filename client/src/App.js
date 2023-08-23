@@ -14,6 +14,7 @@ import CreateQueries from './components/queries/CreateQuery';
 import RequireAuth from './utils/RequireAuth';
 import Profile from './pages/Profile';
 import Chat from './pages/Chat';
+import ChatInterface from './components/studyChat/ChatInterface';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
             <Route path="/create_query" element={<Layout><CreateQueries/></Layout>}/>
             <Route path="/profile" element={<Layout><Profile/></Layout>}/>
             <Route path="/chat" element={<Layout><Chat/></Layout>}/>
+            <Route path="/chat/:id" element={<Layout><ChatInterface/></Layout>}/>
           </Route>
         </Routes>
         <ToastContainer 

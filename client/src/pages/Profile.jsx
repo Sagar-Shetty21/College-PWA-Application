@@ -46,7 +46,7 @@ const Profile = () => {
           <form onSubmit={handleSubmit}>
             <label htmlFor="photo-upload" className="custom-file-upload fas">
               <div className="img-wrap img-upload">
-                <img for="photo-upload" src={imagePreviewUrl} />
+                <img for="photo-upload" src={imagePreviewUrl} alt="profile-img"/>
               </div>
               <input id="photo-upload" type="file" onChange={photoUpload} />
             </label>
@@ -78,7 +78,7 @@ const Profile = () => {
             <form onSubmit={handleSubmit}>
               <label className="custom-file-upload fas">
                 <div className="img-wrap">
-                  <img for="photo-upload" src={imagePreviewUrl} />
+                  <img for="photo-upload" src={imagePreviewUrl} alt="profile-img"/>
                 </div>
               </label>
               <div className="profile-name">{name}</div>
