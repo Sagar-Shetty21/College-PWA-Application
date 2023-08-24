@@ -1,10 +1,9 @@
-import React, {useContext, useEffect} from 'react'
+import React from 'react'
 import QuoteBox from '../components/home/QuoteBox';
 import './home.css';
 import { Link } from "react-router-dom";
 import Lottie from 'lottie-react';
 import studentsAnimation from '../assets/college_students_animation.json'; 
-import SharedStateContext from '../context/sharedStateContext'
 
 
 const Card = (props) => {
@@ -18,18 +17,6 @@ const Card = (props) => {
 }
 
 const Home = () => {
-
-  const { setCurrentPageName } = useContext(SharedStateContext);
-
-  useEffect(() => {
-    sessionStorage.setItem('activeNavItem', 'Home');
-  }, []);
-
-  const handleNavItemClick = (item) => {
-    setCurrentPageName(item);
-    // Store the active navigation item in browser storage
-    sessionStorage.setItem('activeNavItem', item);
-  };
 
   return (
     <div className="home-container" >
@@ -47,14 +34,13 @@ const Home = () => {
       </div>
       <Lottie animationData={studentsAnimation} />
       <div className="cards-flex">
-        <Card data="../assets/CampusNews.png" path="/campus_news" onClick={() => handleNavItemClick('Campus News')} />
-        <Card data="../assets/StudyChat.png" path="/chat" onClick={() => handleNavItemClick('StudyChat')}/>
-        <Card data="../assets/Queries.png" path="/queries" onClick={() => handleNavItemClick('Queries')}/>
-        <Card data="../assets/Profile.png" path="/profile" onClick={() => handleNavItemClick('Profle')}/>
+        <Card data="../assets/CampusNews.png" path="/campus_news" />
+        <Card data="../assets/StudyChat.png" path="/chat" />
+        <Card data="../assets/Queries.png" path="/queries" />
+        <Card data="../assets/Profile.png" path="/profile" />
       </div>
       <hr/>
       <QuoteBox/>
-
     </div>
   )
 }

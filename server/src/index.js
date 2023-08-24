@@ -4,7 +4,8 @@ const database = require('./config/database');
 const authentication = require('./routes/authentication');
 const manageusers = require('./routes/manage-users');
 const queries = require('./routes/queries');
-const admindashboard = require('./routes/admin-dashboard')
+const admindashboard = require('./routes/admin-dashboard');
+const chat = require('./routes/chat');
 const cors = require('cors');
 
 const app = express();
@@ -21,6 +22,7 @@ app.use('/authentication', authentication);
 app.use('/manage-users', manageusers);
 app.use('/queries', queries);
 app.use('/admin-dashboard',admindashboard);
+app.use('/chat',chat)
 
 // start the server
 app.listen(8080, () => {

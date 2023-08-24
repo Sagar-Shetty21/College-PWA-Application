@@ -1,12 +1,11 @@
-import React, {useState, useEffect, useContext} from 'react'
+import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import './navbar.css';
 import {toast} from 'react-toastify'
 import userLogo from '../../assets/user.png';
 import useAuth from '../../utils/hooks/useAuth';
 import Cookies from 'universal-cookie';
-import SharedStateContext from '../../context/sharedStateContext';
-
+import { useLocation } from 'react-router-dom';
 
 
 const SidebarData = [
@@ -45,19 +44,26 @@ const Backdrop = ({ onClick }) => {
 const NavBar = () => {
   
   const { auth } = useAuth();
-  const [sidebar, setSidebar] = useState(false);
-  const { currentPageName, setCurrentPageName } = useContext(SharedStateContext);
+  const [ sidebar, setSidebar ] = useState(false);
+  const [ currentPageName, setCurrentPageName ] = useState("Home");
+
+  const location = useLocation();
+  const path = location.pathname;
 
   useEffect(() => {
-    // Retrieve the active navigation item from browser storage
-    var storedActiveNavItem = sessionStorage.getItem('activeNavItem');
-
-    !storedActiveNavItem && (storedActiveNavItem = "Home");
-
-    if (storedActiveNavItem) {
-      setCurrentPageName(storedActiveNavItem);
+    if(path.startsWith('/','/home')){
+      setCurrentPageName("Home");
     }
-  }, [setCurrentPageName]);
+    if(path.startsWith('/chat')){
+      setCurrentPageName("StudyChat");
+    }else if(path.startsWith('/campus_news')){
+      setCurrentPageName("Campus News");
+    }else if(path.startsWith('/queries')){
+      setCurrentPageName("Queries");
+    }else if(path.startsWith('/profile')){
+      setCurrentPageName("Profile");
+    }
+  },[path]);
 
   const showSidebar = () => setSidebar(!sidebar);
   const cookies = new Cookies();
@@ -67,12 +73,6 @@ const NavBar = () => {
     sessionStorage.clear();
     toast.info("User logger out successfully");
   }
-
-  const handleNavItemClick = (item) => {
-    setCurrentPageName(item);
-    // Store the active navigation item in browser storage
-    sessionStorage.setItem('activeNavItem', item);
-  };
 
   const closeSidebar = () => {
     setSidebar(false);
@@ -95,7 +95,7 @@ const NavBar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/profile" className="profile-box" onClick={() => {setCurrentPageName("Profile"); handleNavItemClick("Profile");}}>
+              <Link to="/profile" className="profile-box">
                 <div className="profile-icon">
                   <img src={userLogo} alt="Profile"/>
                 </div>
@@ -106,7 +106,7 @@ const NavBar = () => {
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
-                  <Link to={item.path} onClick={() => {setCurrentPageName(item.title); handleNavItemClick(item.title);}}>
+                  <Link to={item.path}>
                     {item.icon}
                     <span>{item.title}</span>
                   </Link>

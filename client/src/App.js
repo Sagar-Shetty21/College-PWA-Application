@@ -31,7 +31,7 @@ function App() {
             <Route path="/home" element={<Layout><Home/></Layout>}/>
             <Route path="/campus_news" element={<Layout><Notifications/></Layout>}/>
             <Route path="/queries" element={<Layout><Queries/></Layout>}/>
-            <Route path="/create_query" element={<Layout><CreateQueries/></Layout>}/>
+            <Route path="/queries/create" element={<Layout><CreateQueries/></Layout>}/>
             <Route path="/profile" element={<Layout><Profile/></Layout>}/>
             <Route path="/chat" element={<Layout><Chat/></Layout>}/>
             <Route path="/chat/:id" element={<Layout><ChatInterface/></Layout>}/>

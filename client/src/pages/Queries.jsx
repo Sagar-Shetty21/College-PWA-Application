@@ -35,7 +35,7 @@ const Queries = () => {
       {userQueries.map(query => (
         <QueryCard key={query.id} data={query}/>
       ))}
-      <Link to="/create_query"><div className="create-btn">Create Query</div></Link>
+      <Link to="/queries/create"><div className="create-btn">Create Query</div></Link>
     </div>
   )
 }
