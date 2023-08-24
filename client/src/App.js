@@ -15,6 +15,7 @@ import RequireAuth from './utils/RequireAuth';
 import Profile from './pages/Profile';
 import Chat from './pages/Chat';
 import ChatInterface from './components/studyChat/ChatInterface';
+import AllContacts from './components/studyChat/AllContacts';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
             <Route path="/profile" element={<Layout><Profile/></Layout>}/>
             <Route path="/chat" element={<Layout><Chat/></Layout>}/>
             <Route path="/chat/:id" element={<Layout><ChatInterface/></Layout>}/>
+            <Route path="/chat/availablecontacts" element={<Layout><AllContacts/></Layout>}/>
           </Route>
         </Routes>
         <ToastContainer 

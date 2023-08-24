@@ -11,7 +11,7 @@ const Card = (props) => {
 
   return (
       <Link to={path} className="card-box" onClick={onClick}>
-          <img src={data} width="120" height="120"/>
+          <img src={data} width="120" height="120" alt="nav links icon"/>
       </Link>
   )
 }

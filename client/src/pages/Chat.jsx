@@ -1,8 +1,10 @@
-import React,{ useState } from 'react';
+import React,{ useEffect, useState } from 'react';
 import './chat.css';
 import ChatContainer from '../components/studyChat/ChatContainer';
 
 const Chat = () => {
+
+  
 
   const [chatList, setChatList] = useState([
     {

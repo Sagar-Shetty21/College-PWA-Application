@@ -62,6 +62,7 @@ hr{
 
 .nav-menu span {
   font-weight: 900;
+  margin-left: 16px;
 }
 
 .nav-menu.active {
@@ -116,9 +117,6 @@ hr{
   align-items: center;
 }
 
-span {
-  margin-left: 16px;
-}
 
 /*    Profile icon styling */
 
