@@ -1,5 +1,7 @@
 import React,{useState} from 'react'
 import { useParams } from 'react-router'
+import { Link } from 'react-router-dom'
+import { Avatar } from "react-chat-elements";
 
 const ChatInterface = () => {
 
@@ -18,6 +20,27 @@ const ChatInterface = () => {
 
   return (
     <div className="chat-interface-container">
+        <div className="chat-topbar">
+            <div className="chat-room-info">
+                <div className="chat-avatar">
+                    <Avatar
+                        src="https://pbs.twimg.com/profile_images/1287819484321873921/01-qO1Jx_400x400.jpg"
+                        alt="avatar"
+                        size="xlarge"
+                        type="rounded"
+                    />
+                </div>
+                <div className="chat-room-name">Punju</div>
+            </div>
+            <Link to="/chat">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+                </svg>
+            </Link>
+        </div>
+        <div className="chat-message-container">
+           <p>Apashyam Kirikiri</p> 
+        </div>
         <div className="message-input-field">
             <textarea
                 value={textareaValue}
