@@ -1,45 +1,36 @@
 import React,{ useEffect, useState } from 'react';
 import './chat.css';
 import ChatContainer from '../components/studyChat/ChatContainer';
+import { useChatContacts } from '../context/ChatContactsProvider';
 
 const Chat = () => {
 
-  
+  const { chatContacts } = useChatContacts();
 
-  const [chatList, setChatList] = useState([
-    {
-      id: '1234',
-      avatar: 'https://avatars.githubusercontent.com/u/80540635?v=4',
-      alt: 'kursat_avatar',
-      title: 'Kursat',
-      subtitle: "Why don't we go to the No Way Home movie this weekend ?",
-      date: new Date(),
-      unread: 3,
-    },
-    {
-      id: '8768',
-      avatar: 'https://avatars.githubusercontent.com/u/80540635?v=4',
-      alt: 'kursat_avatar',
-      title: 'minal',
-      subtitle: "Why don't wee this weekend ?",
-      date: new Date(),
-      unread: 3,
-    },
-    {
-      id: '8797',
-      avatar: 'https://avatars.githubusercontent.com/u/80540635?v=4',
-      alt: 'kursat_avatar',
-      title: 'sagar',
-      subtitle: "this weekend ?",
-      date: new Date(),
-      unread: 8,
-    }
-  ]);
+  const [chatContactList, setChatContactList] = useState([]);
+
+  useEffect(() => {
+    setChatContactList(() => {
+      const list = [];
+      chatContacts.map((obj) => {
+        list.push({
+          id: obj.id,
+          avatar: 'https://avatars.githubusercontent.com/u/80540635?v=4',
+          alt: 'avatar',
+          title: obj.name,
+          subtitle: "this weekend ?",
+          date: new Date(),
+          unread: 0,
+        })
+      })
+      return list
+    })
+  },[chatContacts])
 
 
   return (
     <div className="chat">
-        <ChatContainer list={chatList}/>
+        <ChatContainer list={chatContactList}/>
     </div>
   )
 }

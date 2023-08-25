@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import LoadingScreen from './utils/LoadingScreen';
 import App from './App';
 import { AuthProvider } from './context/AuthProvider';
-import { SharedStateProvider } from './context/sharedStateContext';
+import { ChatContactsProvider } from './context/ChatContactsProvider';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,11 +15,11 @@ window.addEventListener('load', () => {
   root.render(
     <React.StrictMode>
       <AuthProvider>
-      <SharedStateProvider>
+      <ChatContactsProvider>
         <BrowserRouter>
           <App />
         </BrowserRouter>
-      </SharedStateProvider>
+      </ChatContactsProvider>
       </AuthProvider>
     </React.StrictMode>
   );

@@ -16,11 +16,15 @@ import Profile from './pages/Profile';
 import Chat from './pages/Chat';
 import ChatInterface from './components/studyChat/ChatInterface';
 import AllContacts from './components/studyChat/AllContacts';
+import useAuth from './utils/hooks/useAuth';
+import { SocketProvider } from './context/SocketProvider';
 
 function App() {
 
+  const { auth } = useAuth();
 
   return (
+    <SocketProvider id={auth.student_id ? auth.student_id : auth.staff_id}>
       <div className="App">
         <LogoAnimation />
         <Routes>
@@ -52,6 +56,7 @@ function App() {
           theme="colored"
         />
       </div>
+    </SocketProvider>
   );
 }
 

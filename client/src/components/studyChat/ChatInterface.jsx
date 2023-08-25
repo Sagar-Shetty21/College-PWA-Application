@@ -26,10 +26,10 @@ const ChatInterface = () => {
 
   const { id } = useParams();
 
-  const socket = io('http://localhost:3002')
+  /* const socket = io('http://localhost:3002')
   socket.on("connect", () => {
     console.log(`you are now conn ${socket.id}`)
-  })
+  }) */
 
   const autoResize = (event) => {
     const textarea = event.target;
