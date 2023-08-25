@@ -16,6 +16,7 @@ import Profile from './pages/Profile';
 import Chat from './pages/Chat';
 import ChatInterface from './components/studyChat/ChatInterface';
 import AllContacts from './components/studyChat/AllContacts';
+import AllContactsForGroup from './components/studyChat/AllContactsForGroup';
 import useAuth from './utils/hooks/useAuth';
 import { SocketProvider } from './context/SocketProvider';
 
@@ -41,6 +42,7 @@ function App() {
             <Route path="/chat" element={<Layout><Chat/></Layout>}/>
             <Route path="/chat/:id" element={<Layout><ChatInterface/></Layout>}/>
             <Route path="/chat/availablecontacts" element={<Layout><AllContacts/></Layout>}/>
+            <Route path="/chat/availablecontactsforgroup" element={<Layout><AllContactsForGroup/></Layout>}/>
           </Route>
         </Routes>
         <ToastContainer 

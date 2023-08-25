@@ -1,36 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 import { useChatContacts } from '../../context/ChatContactsProvider';
 
 const AllContacts = () => {
 
-  const [contactsList, setContactsList] = useState([]);
-  const { createChatContact } = useChatContacts();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/chat/get_available_contacts`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
-        const data = await response.json();
-        setContactsList(() => data.map(obj => ({
-          id: `${obj.student_id ? obj.student_id : obj.staff_id}`,
-          avatar: 'https://avatars.githubusercontent.com/u/80540635?v=4',
-          name: obj.name,
-          section: obj.section,
-          designation: obj.designation
-        })))
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
-  }, []);
-
+  const { createChatContact, contactsList } = useChatContacts();
 
   const addChatContact = (id, name) => {
     createChatContact(id, name)
