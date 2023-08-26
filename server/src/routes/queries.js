@@ -11,7 +11,6 @@ router.get('/get_all_user_queries', (req, res) => {
             res.status(500).send('Internal Server Error');
         } else {
             res.status(200).send(results);
-            console.log(results)
         }
       });
 });

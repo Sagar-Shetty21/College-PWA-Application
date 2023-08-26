@@ -26,7 +26,7 @@ io.on('connection', (socket) => {
 
 router.get('/get_available_contacts', (req, res) => {
     const id = req.query.id;
-
+    
     database.query(`SELECT * FROM registered_students WHERE student_id <> \'${id}\'`, (errorStudents, resultStudents) => {
       if (errorStudents) {
           console.error(errorStudents);
