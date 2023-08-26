@@ -25,12 +25,14 @@ io.on('connection', (socket) => {
 
 
 router.get('/get_available_contacts', (req, res) => {
-    database.query(`SELECT * FROM registered_students`, (errorStudents, resultStudents) => {
+    const id = req.query.id;
+
+    database.query(`SELECT * FROM registered_students WHERE student_id <> \'${id}\'`, (errorStudents, resultStudents) => {
       if (errorStudents) {
           console.error(errorStudents);
           res.status(500).send('Internal Server Error');
       } 
-        database.query(`SELECT * FROM registered_staffs`, (errorStaffs, resultStaffs) => {
+        database.query(`SELECT * FROM registered_staffs WHERE staff_id <> \'${id}\'`, (errorStaffs, resultStaffs) => {
             if (errorStaffs) {
                 console.error(errorStaffs);
                 res.status(500).send('Internal Server Error');

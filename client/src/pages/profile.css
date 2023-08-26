@@ -1,16 +1,22 @@
-
+.profile-page-container{
+  width: 100%;
+  height: calc(100% - 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .profile-card{
     width: 100%;
     height: auto;
     padding: 15px;
-    margin-top: 12px;
+    margin: 14px;
     border-radius: 25px;
     display: flex;
     justify-content: center;
-    box-shadow: 15px 10px 25px 0px  #3fa1a9;
-    background: #d1fff5;
-    background-image: url('https://github.com/OlgaKoplik/CodePen/blob/master/leaf2.png?raw=true'), url('https://github.com/OlgaKoplik/CodePen/blob/master/leaf.png?raw=true');
+    box-shadow: 15px 10px 25px 0px  #2f1342;
+    background: #3a2e3f;
+    /* background-image: url('https://github.com/OlgaKoplik/CodePen/blob/master/leaf2.png?raw=true'), url('https://github.com/OlgaKoplik/CodePen/blob/master/leaf.png?raw=true'); */
     background-repeat: no-repeat, no-repeat;
     background-position: 120% -5%, 200% -40%;
     background-size: 40%, 80%;
@@ -45,7 +51,7 @@
     position: relative;
     padding: 6px;
     cursor: pointer;
-    background: linear-gradient(270deg, #3fa1a9, #79f1a4);
+    background: linear-gradient(270deg, #97949b, #391e64);
     margin-bottom: 25px;
   }
   
@@ -129,7 +135,7 @@
     cursor: pointer;
     border-radius: 25px;
     border: none;
-    background: #64d488;
+    background: #2d243b;
     overflow: visible;
   }
   .profile-card .save{

@@ -40,7 +40,7 @@ const Profile = () => {
 
 
   return (
-    <div>
+    <div className="profile-page-container">
         {active === "edit" ? (
           <div className="profile-card">
           <form onSubmit={handleSubmit}>
@@ -61,6 +61,10 @@ const Profile = () => {
             <div className="field">
               <label htmlFor="section">Section</label>
               <input id="section" type="text" onChange={(e) => setSection(e.target.value)} maxlength="8" value={section} placeholder="B.COM" disabled />
+            </div>
+            <div className="field">
+              <label htmlFor="semister">Semister</label>
+              <input id="semister" type="text" onChange={(e) => setSemister(e.target.value)} maxlength="8" value={section} placeholder="B.COM" disabled />
             </div>
             <div className="field">
               <label htmlFor="email">email</label>

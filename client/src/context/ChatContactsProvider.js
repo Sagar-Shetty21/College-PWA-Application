@@ -1,5 +1,6 @@
 import React, {useContext, useState, useEffect} from 'react'
 import useLocalStorage from '../utils/hooks/useLocalStorage'
+import useAuth from '../utils/hooks/useAuth'
 
 const ChatContactsContext = React.createContext()
 
@@ -9,11 +10,12 @@ export const useChatContacts = () => {
 
 export const ChatContactsProvider = ({children}) => {
   const [contactsList, setContactsList] = useState([]);
+  const {auth} = useAuth();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/chat/get_available_contacts`, {
+        const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/chat/get_available_contacts?id=${auth.student_id}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json'

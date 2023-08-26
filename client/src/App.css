@@ -24,10 +24,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 .App {
   text-align: center;
+  color: white;
   height: 100vh;
   overflow-y: auto;
+  background-color: #271A2D;
+}
+
+.main-body-container{
+  border-radius: 34px 34px 0 0;
+  background-color: #32283B;
+  height: calc(100% - 48px);
+  padding: 30px 0 4px 0;
+  overflow: scroll;
 }
 
 a{

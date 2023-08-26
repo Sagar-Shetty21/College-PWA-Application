@@ -2,7 +2,7 @@
 
 .chat{
     width: 100%;
-    height: calc(100% - 48px);
+    height: 100%;
     padding: 8px;
     scrollbar-width: none;
 }
@@ -12,6 +12,7 @@
     width: 100%;
     padding: 4px;
     background-color: rgba(240, 248, 255, 0.733);
+    background-color: transparent;
     border-radius: 6px;
     overflow-y: scroll;
     position:relative;
@@ -28,7 +29,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    margin: 12px;
+    margin: 8px;
     z-index: 1;
     display: flex;
     background-color: rgb(153, 153, 153);
@@ -38,8 +39,8 @@
 
 .new-user-btn svg,.new-group-btn svg{
     color: green;
-    height: 62px;
-    width: 62px;
+    height: 54px;
+    width: 54px;
     background-color: rgb(240, 255, 250);
     padding: 12px;
     border-radius: 31px;
@@ -52,7 +53,7 @@
 
 .chat-interface-container{
     background-color: #c3c3ff;
-    width: calc(100%-6px);
+    width: calc(100% - 12px);
     height: calc(100% - 60px);
     margin: 6px;
     border-radius: 22px;
@@ -159,17 +160,17 @@
     height: 100%;
     width: 100%;
     padding: 4px;
-    background-color: rgba(240, 248, 255, 0.733);
+    background-color: rgba(211, 211, 211, 0.733);
     border-radius: 6px;
     overflow-y: scroll;
     position:relative;
 }
 
 .contact-card{
-    height:68px;
+    height:58px;
     width: calc(100%-24px);
     border-radius: 12px;
-    background-color: rgb(184, 221, 255);
+    background-color: rgb(231, 243, 255);
     margin: 12px;
     display: flex;
     align-items: center;
@@ -177,14 +178,14 @@
 
 .contact-card > img {
     height: 100%;
-    min-width:68px;
+    min-width:58px;
     border-radius: 12px;
 }
 
 .contact-name{
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 800;
-    color: rgb(85, 97, 255);
+    color: rgb(80, 58, 141);
     padding: 22px;
     flex-grow: 1;
     text-align: left;
@@ -192,7 +193,7 @@
 }
 
 .contact-section{
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
     padding: 6px;
     font-weight: 600;
@@ -202,7 +203,7 @@
 }
 
 .contact-designation{
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
     padding: 6px;
     font-weight: 600;
