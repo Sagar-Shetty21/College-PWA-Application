@@ -1,13 +1,17 @@
 .profile-page-container{
   width: 100%;
-  height: calc(100% - 48px);
+  height: calc(100% + 30px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  background-color: transparent;
+  overflow-y: scroll;
+  margin-top: -30px;
 }
 
 .profile-card{
     width: 100%;
+    min-height: calc(100% - 30px);
     height: auto;
     padding: 15px;
     margin: 14px;
@@ -16,11 +20,12 @@
     justify-content: center;
     box-shadow: 15px 10px 25px 0px  #2f1342;
     background: #3a2e3f;
-    /* background-image: url('https://github.com/OlgaKoplik/CodePen/blob/master/leaf2.png?raw=true'), url('https://github.com/OlgaKoplik/CodePen/blob/master/leaf.png?raw=true'); */
+    /* background-image: url('https://github.com/OlgaKoplik/CodePen/blob/master/leaf2.png?raw=true'), url('https://github.com/OlgaKoplik/CodePen/blob/master/leaf.png?raw=true'); 
+    animation: open .5s;
     background-repeat: no-repeat, no-repeat;
     background-position: 120% -5%, 200% -40%;
-    background-size: 40%, 80%;
-    animation: open .5s;
+    background-size: 40%, 80%; */
+    background-color: transparent;  
 }
 
   @keyframes open {
@@ -40,8 +45,9 @@
     margin: 12px;
     display: flex;
     flex-direction: column;
-    }
-    .profile-card input[type="file"] {
+  }
+
+  .profile-card input[type="file"] {
     display: none;
   }
   
@@ -140,22 +146,16 @@
   }
   .profile-card .save{
     font-weight: 600;
-    left: -20px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    width: 20px;
-    box-shadow: 20px 0px 40px 10px  #2b58b8;
-  }
-  .profile-card .edit{
-    color: #fff;
-    width: 180px;
-  }
-  .profile-card button:hover{
-    left: 0;
-    color: #fff;
     width: 180px;
     box-shadow: 0px 0px 20px 0px  #63d3a6;
+    color: #fff;
   }
+  .profile-card .edit{
+    color: #fff;  
+    width: 180px;
+  } 
   .profile-card button:focus{
     outline: none;
   }
