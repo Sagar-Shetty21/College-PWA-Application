@@ -2,7 +2,7 @@ const express = require('express');
 const database = require('../config/database');
 const router = express.Router();
 
-const io = require('socket.io')(5000, {
+/* const io = require('socket.io')(5000, {
     cors: {
         origin: ["http://localhost:3000"]
     }
@@ -21,7 +21,7 @@ io.on('connection', (socket) => {
             })
         })
     })
-})
+}) */
 
 
 router.get('/get_available_contacts', (req, res) => {

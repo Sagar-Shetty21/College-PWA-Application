@@ -43,7 +43,7 @@ const Backdrop = ({ onClick }) => {
 
 const NavBar = () => {
   
-  const { auth } = useAuth();
+  const { auth, setAuth } = useAuth();
   const [ sidebar, setSidebar ] = useState(false);
   const [ currentPageName, setCurrentPageName ] = useState("Home");
 
@@ -71,6 +71,7 @@ const NavBar = () => {
   const logoutHandler = () => {
     cookies.remove('user');
     sessionStorage.clear();
+    setAuth("");
     toast.info("User logger out successfully");
   }
 
