@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const fetchModule = import('node-fetch');
 
 
 router.get('/getQuote', async (req, res) => {
     try {
+      const fetch = await fetchModule;
       const url = 'https://zenquotes.io/api/random';
-      const response = await fetch(url);
+      const response = await fetch.default(url);
       const data = await response.json();
       
       // Extract the quote text from the data

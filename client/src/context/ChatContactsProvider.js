@@ -22,7 +22,6 @@ export const ChatContactsProvider = ({children}) => {
             'Content-Type': 'application/json'
           }
         });
-        console.log("fetch req to get all contacts")
         const data = await response.json();
         setContactsList(() => data.map(obj => ({
           id: `${obj.student_id ? obj.student_id : obj.staff_id}`,

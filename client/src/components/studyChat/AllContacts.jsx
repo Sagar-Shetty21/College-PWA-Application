@@ -14,7 +14,7 @@ const AllContacts = () => {
   if(isLoading){
     return <LoadingScreen />
   }
-  console.log("provider user")
+
   return (
     <div className='all-contacts-page'>
       <div className='all-contacts-container'>
