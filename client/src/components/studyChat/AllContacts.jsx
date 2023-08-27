@@ -1,16 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useChatContacts } from '../../context/ChatContactsProvider';
+import LoadingScreen from '../../utils/LoadingScreen';
 
 const AllContacts = () => {
 
-  const { createChatContact, contactsList } = useChatContacts();
+  const { createChatContact, contactsList, isLoading } = useChatContacts();
 
   const addChatContact = (id, name) => {
     createChatContact(id, name)
   }
 
-
+  if(isLoading){
+    return <LoadingScreen />
+  }
+  console.log("provider user")
   return (
     <div className='all-contacts-page'>
       <div className='all-contacts-container'>

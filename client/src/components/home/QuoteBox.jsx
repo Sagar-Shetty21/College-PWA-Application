@@ -6,21 +6,24 @@ const QuoteBox = () => {
   const [quote, setQuote] = useState({})
 
   useEffect(() => {
-    fetch("https://zenquotes.io/api/random")
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(data) {
-        setQuote(data[0]);
-      });
+    const getQuote = async () => {
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/quotes/getQuote`);
+        const data = await response.json();
+        setQuote(data);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+    getQuote();
   },[])
 
   return (
     <div className="quote-card">
       <blockquote>
-        <p>{quote.q}</p>
+        <p>{quote.quote}</p>
       </blockquote>
-      <h3 class="name">{quote.a}</h3>
+      <h3 class="name">{quote.author}</h3>
     </div>
   )
 }

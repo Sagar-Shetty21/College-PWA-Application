@@ -11,6 +11,7 @@ export const useChatContacts = () => {
 export const ChatContactsProvider = ({children}) => {
   const [contactsList, setContactsList] = useState([]);
   const {auth} = useAuth();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,6 +22,7 @@ export const ChatContactsProvider = ({children}) => {
             'Content-Type': 'application/json'
           }
         });
+        console.log("fetch req to get all contacts")
         const data = await response.json();
         setContactsList(() => data.map(obj => ({
           id: `${obj.student_id ? obj.student_id : obj.staff_id}`,
@@ -29,6 +31,7 @@ export const ChatContactsProvider = ({children}) => {
           section: obj.section,
           designation: obj.designation
         })))
+        setIsLoading(false);
       } catch (error) {
         console.error(error);
       }
@@ -48,7 +51,7 @@ export const ChatContactsProvider = ({children}) => {
   }
   
   return (
-    <ChatContactsContext.Provider value={{ chatContacts, createChatContact, contactsList}}>
+    <ChatContactsContext.Provider value={{ chatContacts, createChatContact, contactsList, isLoading}}>
         {children}
     </ChatContactsContext.Provider>
   )
