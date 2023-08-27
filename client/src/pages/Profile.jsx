@@ -86,12 +86,12 @@ const Profile = () => {
                 </div>
               </label>
               <div className="profile-name">{name}</div>
-              <div className="profile-status">ID : {id}</div>
-              <div className="profile-status">Email : {email}</div>
-              <div className="profile-status">Contact Number : {number}</div>
-              <div className="profile-status">Section : {section}</div>
-              <div className="profile-status">Sem : {semister}</div>
-              <div className="profile-status">Gender : {gender}</div>
+              <div className="profile-status">{id}</div>
+              <div className="profile-status">{email}</div>
+              <div className="profile-status">{number}</div>
+              <div className="profile-status">{section}</div>
+              <div className="profile-status">{semister}</div>
+              <div className="profile-status">{gender}</div>
               <button type="submit" className="edit">
                 Edit Profile{" "}
               </button>

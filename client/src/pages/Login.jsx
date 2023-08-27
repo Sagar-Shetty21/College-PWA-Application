@@ -39,7 +39,10 @@ const Login = () => {
             toast.error("Server Error!")
           }else if(data.result){
             setAuth({...data.result, accessToken: data.accessToken})
-            cookies.set('user',{...data.result, accessToken: data.accessToken})
+            cookies.set('user',{...data.result, accessToken: data.accessToken},{
+              expires: 90,
+              path: "/",
+            })
             toast.success("Logged in as " + data.result.name)
             navigate("/home")
           }else{

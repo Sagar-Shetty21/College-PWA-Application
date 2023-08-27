@@ -94,6 +94,7 @@
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    flex-direction: column;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
@@ -101,4 +102,6 @@
     place-items: center;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.541);
     background: #757e974b;
+    color: rgb(201, 201, 201);
+    font-weight: 700;
 }

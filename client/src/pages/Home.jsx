@@ -7,11 +7,12 @@ import studentsAnimation from '../assets/college_students_animation.json';
 
 
 const Card = (props) => {
-  const {data, path, onClick} = props;
+  const {data, path, onClick, text} = props;
 
   return (
       <Link to={path} className="card-box" onClick={onClick}>
           <img src={data} width="120" height="120" alt="nav links icon"/>
+          <div>{text}</div>
       </Link>
   )
 }
@@ -34,10 +35,10 @@ const Home = () => {
       </div>
       <Lottie animationData={studentsAnimation} />
       <div className="cards-flex">
-        <Card data="../assets/CampusNews.png" path="/campus_news" />
-        <Card data="../assets/StudyChat.png" path="/chat" />
-        <Card data="../assets/Queries.png" path="/queries" />
-        <Card data="../assets/Profile.png" path="/profile" />
+        <Card data="../assets/CampusNews.png" text="Campus News" path="/campus_news" />
+        <Card data="../assets/StudyChat.png" text="StudyChat" path="/chat" />
+        <Card data="../assets/Queries.png" text="Queries" path="/queries" />
+        <Card data="../assets/Profile.png" text="Profile" path="/profile" />
       </div>
       <hr/>
       <QuoteBox/>
