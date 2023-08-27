@@ -11,11 +11,11 @@ export function useSocket() {
 export function SocketProvider({id, children}) {
   const [socket, setSocket] = useState();
 
-  useEffect(() => {
+  /* useEffect(() => {
     const newSocket = io('http://localhost:5000', { query: {id}})
     setSocket(newSocket)
     return () => newSocket.close()
-  },[id])
+  },[id]) */
 
   return (
     <SocketContext.Provider vlaue={socket}>

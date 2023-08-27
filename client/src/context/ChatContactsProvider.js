@@ -34,10 +34,11 @@ export const ChatContactsProvider = ({children}) => {
         setIsLoading(false);
       } catch (error) {
         console.error(error);
+        setIsLoading(false);
       }
     };
     fetchData();
-  }, []);
+  }, [auth]);
 
   const [chatContacts, setChatContacts] = useLocalStorage('chat_contacts',contactsList)
 
