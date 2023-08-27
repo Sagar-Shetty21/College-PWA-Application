@@ -6,21 +6,21 @@ const QuoteBox = () => {
   const [quote, setQuote] = useState({})
 
   useEffect(() => {
-    fetch("https://type.fit/api/quotes")
+    fetch("https://zenquotes.io/api/random")
       .then(function(response) {
         return response.json();
       })
       .then(function(data) {
-        setQuote(data[Math.floor(Math.random() * 9) + 1]);
+        setQuote(data[0]);
       });
   },[])
 
   return (
     <div className="quote-card">
       <blockquote>
-        <p>{quote.text}</p>
+        <p>{quote.q}</p>
       </blockquote>
-      <h3 class="name">{quote.author}</h3>
+      <h3 class="name">{quote.a}</h3>
     </div>
   )
 }
