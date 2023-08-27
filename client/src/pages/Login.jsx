@@ -39,8 +39,10 @@ const Login = () => {
             toast.error("Server Error!")
           }else if(data.result){
             setAuth({...data.result, accessToken: data.accessToken})
+            const expirationDate = new Date();
+            expirationDate.setDate(expirationDate.getDate() + 90); 
             cookies.set('user',{...data.result, accessToken: data.accessToken},{
-              expires: 90,
+              expires: expirationDate,
               path: "/",
             })
             toast.success("Logged in as " + data.result.name)
