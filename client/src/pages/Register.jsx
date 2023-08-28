@@ -2,7 +2,6 @@ import {React, useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { RegisterPage, Container, SubmitButtonBox, SubmitButton, UserDetails, FormInput, Details, VerifyButtonBox, VerifyButton, FormInputBox, Title, RadioInput, AccTypeTitle, DotOne, DotTwo, Category, AccTypeLabel, LinkButton} from "./Register.style";
-import image from '../assets/user.png';
 import LoadingScreen from '../utils/LoadingScreen';
 
 
@@ -45,7 +44,7 @@ const Register = () => {
               phone: phoneNumber,
               password: password,
               type: accType,
-              image: image
+              //image: image
             })
           })
           .then(response => response.json())

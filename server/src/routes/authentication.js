@@ -75,12 +75,12 @@ router.post('/login', (req,res) => {
     database.query(`
         SELECT *
         FROM
-        (SELECT * FROM registered_students
+        (SELECT student_id, name, section, gender, email, phone FROM registered_students
         WHERE student_id = '${userId}' AND password = '${password}') AS student
         UNION
         SELECT *
         FROM
-        (SELECT * FROM registered_staffs
+        (SELECT staff_id, name, designation, gender, email, phone FROM registered_staffs
         WHERE staff_id = '${userId}' AND password = '${password}') AS staff
         LIMIT 1    
     `,(err, result) =>{

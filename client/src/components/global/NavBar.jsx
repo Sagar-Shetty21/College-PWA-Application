@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import './navbar.css';
 import {toast} from 'react-toastify'
-import userLogo from '../../assets/user.png';
 import useAuth from '../../utils/hooks/useAuth';
 import Cookies from 'universal-cookie';
 import { useLocation } from 'react-router-dom';
@@ -98,7 +97,7 @@ const NavBar = () => {
             <li>
               <Link to="/profile" className="profile-box">
                 <div className="profile-icon">
-                  <img src={userLogo} alt="Profile"/>
+                  <img src="/assets/user-profile-default.jpg" alt="Profile"/>
                 </div>
                 <span className="profile-name">{auth.name}</span>
               </Link>

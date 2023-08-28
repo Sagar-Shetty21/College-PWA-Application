@@ -7,7 +7,7 @@ const Profile = () => {
   const { auth } = useAuth();
 
   const [file, setFile] = useState("");
-  const [imagePreviewUrl, setImagePreviewUrl] = useState("https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true");
+  const [imagePreviewUrl, setImagePreviewUrl] = useState("/assets/user-profile-default.jpg");
   const [name, setName] = useState(auth.name);
   const [id, setId] = useState(auth.student_id);
   const [email, setEmail] = useState(auth.email);
@@ -17,16 +17,13 @@ const Profile = () => {
   const [gender, setGender] = useState(auth.gender);
   const [active, setActive] = useState("profile");
 
-
   const photoUpload = (e) => {
     e.preventDefault();
     const reader = new FileReader();
     const file = e.target.files[0];
     reader.onloadend = () => {
-      setFile({
-        file: file,
-        imagePreviewUrl: reader.result
-      });
+      setFile(file);
+      setImagePreviewUrl(reader.result);
     };
     reader.readAsDataURL(file);
   };
@@ -38,7 +35,7 @@ const Profile = () => {
     setActive(activeP)
   };
 
-
+  
   return (
     <div className="profile-page-container">
         {active === "edit" ? (
@@ -64,7 +61,17 @@ const Profile = () => {
             </div>
             <div className="field">
               <label htmlFor="semister">Semister</label>
-              <input id="semister" type="text" onChange={(e) => setSemister(e.target.value)} maxlength="8" value={section} placeholder="B.COM" disabled />
+              <select id="semister" onChange={(e) => setSemister(e.target.value)} value={semister} required>
+                <option value="">Choose Your Semister</option>
+                <option value="1">I Sem</option>
+                <option value="2">II Sem</option>
+                <option value="3">III Sem</option>
+                <option value="4">IV Sem</option>
+                <option value="5">V Sem</option>
+                <option value="6">VI Sem</option>
+                <option value="7">VII Sem</option>
+                <option value="8">VIII Sem</option>
+              </select>
             </div>
             <div className="field">
               <label htmlFor="email">email</label>

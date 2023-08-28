@@ -6,6 +6,7 @@ const manageusers = require('./routes/manage-users');
 const queries = require('./routes/queries');
 const admindashboard = require('./routes/admin-dashboard');
 const chat = require('./routes/chat');
+const profile = require('./routes/profile')
 const quotes = require('./routes/quotes')
 const cors = require('cors');
 
@@ -25,6 +26,7 @@ app.use('/queries', queries);
 app.use('/admin-dashboard',admindashboard);
 app.use('/chat',chat)
 app.use('/quotes', quotes)
+app.use('/profile', profile)
 
 // start the server
 app.listen(8080, () => {
