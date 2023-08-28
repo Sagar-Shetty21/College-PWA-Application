@@ -11,8 +11,8 @@ const CreateQuery = () => {
   const {auth} = useAuth();
   const [name,setName] = useState(auth.name);
   const [regId,setRegId] = useState(auth.student_id);
-  const [sub,setSub] = useState(auth.name);
-  const [desc,setDesc] = useState(auth.name);
+  const [sub,setSub] = useState("");
+  const [desc,setDesc] = useState("");
   const navigate = useNavigate();
 
 

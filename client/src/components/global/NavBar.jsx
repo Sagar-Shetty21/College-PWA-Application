@@ -5,6 +5,7 @@ import {toast} from 'react-toastify'
 import useAuth from '../../utils/hooks/useAuth';
 import Cookies from 'universal-cookie';
 import { useLocation } from 'react-router-dom';
+import { useSharedState } from '../../context/sharedStateContext';
 
 
 const SidebarData = [
@@ -45,6 +46,8 @@ const NavBar = () => {
   const { auth, setAuth } = useAuth();
   const [ sidebar, setSidebar ] = useState(false);
   const [ currentPageName, setCurrentPageName ] = useState("Home");
+  const {userProfileImg} = useSharedState();
+
 
   const location = useLocation();
   const path = location.pathname;
@@ -97,7 +100,7 @@ const NavBar = () => {
             <li>
               <Link to="/profile" className="profile-box">
                 <div className="profile-icon">
-                  <img src="/assets/user-profile-default.jpg" alt="Profile"/>
+                  <img src={userProfileImg} alt="Profile"/>
                 </div>
                 <span className="profile-name">{auth.name}</span>
               </Link>

@@ -67,6 +67,26 @@ router.get('/verifyid', (req,res) => {
     }
 });
 
+router.get('/getprofileimg', (req,res) => {
+    const id = req.query.id;
+    //search for the user in database
+    database.query(`
+        SELECT profile_img FROM registered_students
+        WHERE student_id = '${id}'
+        UNION
+        SELECT profile_img FROM registered_staffs
+        WHERE staff_id = '${id}'
+        LIMIT 1    
+    `,(err, result) =>{
+        console.log(err)
+        if (err) {
+            res.status(500).send('Internal Server Error');
+        } else {
+            res.status(200).send(result);
+        }
+    })
+})
+
                                /*  user login */
 router.post('/login', (req,res) => {
     const {userId, password} = req.body;
