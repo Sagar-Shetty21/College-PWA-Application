@@ -61,7 +61,7 @@ const Sidebar = () => {
     <>
         <Nav>
           <NavIcon to='#'>
-            <i class="fa-solid fa-bars" onClick={showSidebar} />
+            <i className="fa-solid fa-bars" onClick={showSidebar} />
           </NavIcon>
           <Header>
             <span>SILICON CITY COLLEGE</span>
@@ -70,7 +70,7 @@ const Sidebar = () => {
         <SidebarNav sidebar={sidebar}>
           <SidebarWrap>
             <NavIcon to='#'>
-              <i class="fa-solid fa-square-xmark" onClick={showSidebar} />
+              <i className="fa-solid fa-square-xmark" onClick={showSidebar} />
             </NavIcon>
             {SidebarData.map((item, index) => {
               return <SubMenu item={item} key={index} />;

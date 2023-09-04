@@ -41,6 +41,14 @@
     border-radius: 4px;
 }
 
+.new-post-content .text-editor {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid grey;
+    padding: 18px;
+    border-radius: 12px;
+
+}
+
 .selected-img-preview {
     display: flex;
     flex-direction: row;
@@ -136,6 +144,7 @@
     border-radius: 8px;
     background-color: rgb(218, 218, 218);
     padding: 22px 220px;
+    overflow-y: scroll;
 }
 
 .post-card{
@@ -144,20 +153,66 @@
     display: flex;
     padding: 18px;
     background-color: rgb(255, 255, 255);
+    margin: 18px;
+    box-shadow: 0 0 20px black;
 }
 
 .left{
-    background-color: rgb(185, 185, 185);
+    background-color: rgba(185, 185, 185, 0.322);
     flex-grow: 1;
     padding: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
+.lower-left{
+    display: flex;
+    align-items: center ;
+    justify-content: space-between;
+    background-color: aliceblue;
+}
+
+.text-content {
+    background-color: rgb(230, 230, 230);
+    flex-grow: 1;
+    overflow-y: scroll;
+    font-size: 22px;
+    font-weight: 900;
+    text-align: left;
+    padding: 6px;
+}
+
+.time-content{
+    padding: 8px;
+    background-color: azure;
+    border-radius: 6px;
+    color: rgb(54, 65, 39);
+    font-weight: 800;
+}
+
+.post-delete-btn {
+    margin: 4px;
+    padding: 8px;
+    background-color: rgba(255, 53, 53, 0.904);
+    border-radius: 4px;
+    color:white;
+    font-weight: 800;
+}
+
+.post-delete-btn:hover{
+    background-color: red;
+    cursor: pointer;
+}
+.post-delete-btn:active{
+    background-color: rgb(95, 0, 0);
+}
 .right{
     width: 450px;
     height: 300px;
+    min-width: 450px;
+    min-height: 300px;
     position: relative;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 20px black;
 }
 
 .images-area{
@@ -166,6 +221,7 @@
     position: relative;
     display: flex;
     overflow: hidden;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.658);
 }
 
 .image-container{
@@ -237,5 +293,33 @@
     font-size: 70px;
   }
 
+
+
+/* Pagination Area */
+.pagination-area{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  /* Pagination Spans */
+  .pagination-area span{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    margin-right: 5px;
+    transform: scale(0.5);
+    transition: 0.3s ease-in-out;
+    opacity: 0.4;
+  }
+  /* Current Active Span */
+  .pagination-area span.active{
+    transform: scale(1);
+    opacity: 1;
+  }
+  
 
 

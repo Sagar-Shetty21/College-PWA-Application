@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ReactQuill from 'react-quill';
 import './styles.css'
 
 const NewPost = () => {
@@ -82,7 +83,7 @@ const NewPost = () => {
         <form onSubmit={handleSubmit}>
         <div className="page-title">Create a New Post</div>
         <div className="new-post-content">  
-          <textarea value={textData} onChange={(e) => setTextData(e.target.value)} required placeholder='caption or notification goes here....'/>  
+          <ReactQuill theme="snow" value={textData} onChange={setTextData} className="text-editor"/>
           <LoadImgPreview />
         </div>
         <div className="new-post-btns">
