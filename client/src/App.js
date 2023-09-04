@@ -1,4 +1,5 @@
 import './App.css';
+import '@fortawesome/fontawesome-free/css/all.css'; // Include all icons
 import {React} from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';

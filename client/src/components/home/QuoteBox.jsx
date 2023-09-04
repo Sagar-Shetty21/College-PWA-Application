@@ -23,7 +23,7 @@ const QuoteBox = () => {
       <blockquote>
         <p>{quote.quote}</p>
       </blockquote>
-      <h3 class="name">{quote.author}</h3>
+      <h3 className="name">{quote.author}</h3>
     </div>
   )
 }

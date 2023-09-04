@@ -12,25 +12,25 @@ const SidebarData = [
   {
     title: "Home",
     path: "/",
-    icon: <i class="fa-solid fa-house"></i>,
+    icon: <i className="fa-solid fa-house"></i>,
     cName: "nav-text",
   },
   {
     title: "Campus News",
     path: "/campus_news",
-    icon: <i class="fa-solid fa-graduation-cap"></i>,
+    icon: <i className="fa-solid fa-graduation-cap"></i>,
     cName: "nav-text",
   },
   {
     title: "StudyChat",
     path: "/chat",
-    icon: <i class="fa-solid fa-comments"></i>,
+    icon: <i className="fa-solid fa-comments"></i>,
     cName: "nav-text",
   },
   {
     title: "Queries",
     path: "/queries",
-    icon: <i class="fa-solid fa-clipboard-question"></i>,
+    icon: <i className="fa-solid fa-clipboard-question"></i>,
     cName: "nav-text",
   },
 
@@ -85,7 +85,7 @@ const NavBar = () => {
     <div>
         <div className="navbar">
           <Link to="#" className="menu-bars">
-          <i class="fa-solid fa-bars-staggered" onClick={showSidebar}></i>
+          <i className="fa-solid fa-bars-staggered" onClick={showSidebar}></i>
           </Link>
           <div className="nav-title">{currentPageName}</div>
         </div>
@@ -94,7 +94,7 @@ const NavBar = () => {
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-toggle">
               <Link to="#" className="menu-bars">
-                <i class="fa-solid fa-xmark"></i>
+                <i className="fa-solid fa-xmark"></i>
               </Link>
             </li>
             <li>

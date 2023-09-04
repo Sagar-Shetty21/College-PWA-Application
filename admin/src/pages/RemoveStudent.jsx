@@ -64,9 +64,9 @@ const RemoveStudent = () => {
 
   return (
     <div className="remove-staff-page">
-      <div class="search-local">
-        <div class="icon">
-          <i class="fa-solid fa-magnifying-glass"/>
+      <div className="search-local">
+        <div className="icon">
+          <i className="fa-solid fa-magnifying-glass"/>
         </div>
 
         <input type="text" placeholder="Enter Register ID" onChange={(e) => setSearch(e.target.value)} value={search} />

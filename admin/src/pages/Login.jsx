@@ -46,23 +46,23 @@ const Login = () => {
 
   return (
     <div className="login-page">
-        <div class="wrap">
-            <div class="box">
-                <div class="content">
+        <div className="wrap">
+            <div className="box">
+                <div className="content">
                     <form onSubmit={handleSubmit}>
-                        <div class="logo-wrap">
-                            <i class="fa-solid fa-key"></i>
+                        <div className="logo-wrap">
+                            <i className="fa-solid fa-key"></i>
                         </div>
                         <h1>Welcome Back!</h1>
-                        <div class="input-box">
+                        <div className="input-box">
                             <input type="text" placeholder="User ID" onChange={(e) => setUserId(e.target.value)} value={userId} maxLength="20" required />
-                            <i class="fa-solid fa-user" />
+                            <i className="fa-solid fa-user" />
                         </div>
-                        <div class="input-box">
+                        <div className="input-box">
                             <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} required />
-                            <i class="fa-solid fa-lock" />
+                            <i className="fa-solid fa-lock" />
                         </div>
-                        <div class="input-box">
+                        <div className="input-box">
                             <input type="submit" value="Login"/>
                         </div>
                     </form>

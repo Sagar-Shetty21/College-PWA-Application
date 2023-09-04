@@ -44,7 +44,7 @@ const body = {
     <div style={overlay}>
     <div style={container}>
         <div style={header}>
-            <i class="fa-solid fa-rectangle-xmark" style={closeBtn} onClick={() => toggleActive(({active: false, prompt: ""}))}></i>
+            <i className="fa-solid fa-rectangle-xmark" style={closeBtn} onClick={() => toggleActive(({active: false, prompt: ""}))}></i>
         </div>
         <div style={body}>
             {children}
