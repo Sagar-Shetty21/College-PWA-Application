@@ -42,7 +42,7 @@ const AllPosts = () => {
         }).filter(Boolean);
         
         return (
-          <PostCard images={imagesArray} data={post} key={post.id}/>
+          <PostCard images={imagesArray} data={post} key={post.id} setData={setPostsData}/>
         )
       })}
     </div>

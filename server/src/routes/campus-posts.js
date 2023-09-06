@@ -20,6 +20,22 @@ router.post('/create', (req,res) => {
   ); 
 })
 
+router.post('/delete', (req,res) => {
+  const {id} = req.body;
+  
+  database.query(
+    `DELETE FROM campus_posts WHERE id = ${id};`,
+    (err, results) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send({ err });
+        } else {
+            res.status(200).send({ message: 'Post Deleted Successfully!' });
+        }
+    }
+  ); 
+})
+
 router.get('/all_posts', (req,res) => {
   
   database.query(

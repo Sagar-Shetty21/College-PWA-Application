@@ -1,0 +1,171 @@
+
+
+.query-container{
+    height: calc(100vh - 80px);
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    padding: 22px;
+    overflow-y: scroll;
+}
+
+.query-page-title{
+    font-size: 34px;
+    font-weight: 800;
+    text-transform: uppercase;
+    background-color: rgba(192, 192, 192, 0.562);
+    margin: 10px 35%;
+    padding: 6px;
+    border-radius: 12px;
+}
+
+.query-card{
+    height: 300px;
+    width: calc(100% - 32px);
+    margin: 16px;
+    background-color: rgb(216, 237, 255);
+    border: 3px solid rgb(9, 9, 37);
+    border-radius: 8px;
+    display: flex;
+}
+
+.query-card > .left-section{
+    width: 50%;
+    background-color: rgb(216, 237, 255);
+    padding: 8px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.query-card > .left-section .query-top-info{
+    padding: 6px;
+    background-color: rgb(190, 190, 190);
+    display: flex;  
+    width: 100%;
+    border-radius: 4px;
+    align-items: center;
+}
+
+.query-card > .left-section .query-top-info .query-subject{
+    font-size: 20px;
+    font-weight: 800;
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow-x: scroll;
+    padding-right: 10px;
+}
+
+.query-card > .left-section .query-top-info .query-student-info{
+    background-color: rgb(198, 198, 255);
+    display: flex; 
+    align-items: center; 
+    border-radius: 8px;
+    overflow: hidden;
+    font-weight: 900;
+    flex-shrink: 0;
+}
+
+.query-student-name{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+}
+
+.query-student-id{
+    background-color: rgb(167, 255, 218);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+.query-card > .right-section{
+    width: calc(50% - 14px);
+    background-color: rgb(255, 255, 255);
+    margin: 14px 0 14px 14px ;
+    border-radius: 18px 0 0 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.right-section .response-btn {
+    font-size: 22px;
+    font-weight: 800;
+    padding: 12px 24px;
+    background-color: rgb(170, 255, 168);
+    color: rgb(0, 0, 0);
+    border-radius: 8px;
+}
+
+.right-section .response-btn:hover {
+    background-color: rgb(96, 255, 93);
+}
+
+.right-section .response-btn:active {
+    background-color: rgb(13, 48, 13);
+    color: rgb(255, 255, 255);
+}
+
+.right-section .response-input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.right-section .response-input .buttons-section{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10%;
+}
+
+.right-section .response-input textarea{
+    height: 83%;
+    border-radius: 18px;
+    border: none;
+    overflow-y: scroll;
+    padding: 14px;
+    outline: none;
+    font-size: 21px;
+}
+
+.right-section .response-input .buttons-section > div{
+    margin: 4px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    width: 100%;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.buttons-section > .submit-btn{
+    background-color: rgb(100, 255, 100);
+}
+
+.buttons-section > .cancel-btn{
+    background-color: rgb(255, 169, 98);
+}
+
+.buttons-section > .submit-btn:hover{
+    background-color: rgb(62, 255, 62);
+}
+
+.buttons-section > .cancel-btn:hover{
+    background-color: rgb(255, 150, 63);
+}
+
+.buttons-section > .submit-btn:active{
+    background-color: rgb(10, 63, 10);
+}
+
+.buttons-section > .cancel-btn:active{
+    background-color: rgb(163, 73, 0);
+}
