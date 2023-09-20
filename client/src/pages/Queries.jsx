@@ -29,7 +29,7 @@ const Queries = () => {
     fetchData();
   }, []);
  
-
+  console.log(userQueries)
   return (
     <div>
       {userQueries.map(query => (

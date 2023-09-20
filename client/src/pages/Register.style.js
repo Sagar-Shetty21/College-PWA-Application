@@ -8,6 +8,7 @@ export const RegisterPage = styled.div`
     align-items: center; /* center horizontally */
     background: linear-gradient( #0A2647, #03001C);
     padding: 10px;
+    color: black;
 `;
 
 export const Container = styled.div`

@@ -55,7 +55,7 @@ router.get('/get_all_active_queries', (req, res) => {
 
 router.get('/get_all_resolved_queries', (req, res) => {
   
-  database.query(`SELECT * FROM queries WHERE is_resolved = 1 ORDER BY id DESC`, (error, results) => {
+  database.query(`SELECT * FROM queries WHERE is_resolved = 1 ORDER BY resolvedAt DESC`, (error, results) => {
     if (error) {
         console.error(error);
         res.status(500).send('Internal Server Error');
@@ -64,6 +64,23 @@ router.get('/get_all_resolved_queries', (req, res) => {
     }
   });
 });
+
+router.post('/resolve_query',(req,res) => {
+  const {id, resolvedInfo}= req.body;
+  console.log(req.body)
+
+  database.query(
+    `UPDATE queries SET is_resolved=1, resolved_info='${resolvedInfo}', resolvedAt=NOW() WHERE id=${id}`,
+    (err, results) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send({ err });
+        } else {
+            res.status(200).send({ message: 'Query Submitted Successfully' });
+        }
+    }
+  ); 
+})
 
 
 module.exports = router;

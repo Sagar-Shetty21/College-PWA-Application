@@ -41,7 +41,6 @@ const Login = () => {
             setAuth({...data.result, accessToken: data.accessToken})
             const expirationDate = new Date();
             expirationDate.setDate(expirationDate.getDate() + 90); 
-            console.log(data.result)
             cookies.set('user',{...data.result, accessToken: data.accessToken},{
               expires: expirationDate,
               path: "/",

@@ -43,7 +43,6 @@
     display: flex;  
     width: 100%;
     border-radius: 4px;
-    align-items: center;
 }
 
 .query-card > .left-section .query-top-info .query-subject{
@@ -51,7 +50,8 @@
     font-weight: 800;
     flex-grow: 1;
     white-space: nowrap;
-    overflow-x: scroll;
+    text-overflow: ellipsis; 
+    overflow: hidden;
     padding-right: 10px;
 }
 
@@ -168,4 +168,32 @@
 
 .buttons-section > .cancel-btn:active{
     background-color: rgb(163, 73, 0);
+}
+
+.buttons-section > .resolved-date-btn{
+    background-color: rgb(192, 255, 211);
+    font-size: 20px !important;
+    font-weight: 200 !important;
+}
+
+.query-description{
+    background-color: rgb(255, 246, 236);
+    width: 100%;
+    padding: 6px;
+    flex-grow: 1;
+    border-left: 6px solid rgb(190, 190, 190);
+    border-right: 6px solid rgb(190, 190, 190);
+    font-size: 20px;
+}
+
+.query-date{
+    padding: 6px;
+    background-color: rgb(190, 190, 190);
+    display: flex;  
+    width: 100%;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: rgb(14, 36, 70);
 }

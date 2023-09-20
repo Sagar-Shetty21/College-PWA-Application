@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import './styles.css';
-import PostCard from './PostCard';
+import './posts.css';
+import PostCard from '../components/post/PostCard';
 
 
 const AllPosts = () => {

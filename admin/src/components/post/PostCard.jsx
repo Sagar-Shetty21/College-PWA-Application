@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import './styles.css'
 import PopupModal from '../../modals/popupModal';
 
 const PostCard = ({images, data, setData}) => {

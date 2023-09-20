@@ -6,6 +6,8 @@ import App from './App';
 import { AuthProvider } from './context/AuthProvider';
 import { ChatContactsProvider } from './context/ChatContactsProvider';
 import { SharedStateProvider } from './context/sharedStateContext';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -24,6 +26,18 @@ window.addEventListener('load', () => {
           </ChatContactsProvider>
         </SharedStateProvider>
       </AuthProvider>
+      <ToastContainer 
+        position="top-center"
+        autoClose={1200}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </React.StrictMode>
   );
 })

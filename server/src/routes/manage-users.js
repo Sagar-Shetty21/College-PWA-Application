@@ -79,9 +79,13 @@ router.post('/addstudent', (req,res) => {
   router.post('/removestaff', (req, res) => {
     const regno = req.body.regno
     console.log(req.body);
-    database.query(`DELETE FROM all_staffs WHERE staff_id = '${regno}'`, (error, results, fields) => {
-    if (error) throw error
-      res.send(results)
+    database.query(`DELETE FROM all_staffs WHERE staff_id = '${regno}'`, (error1, results1, fields1) => {
+    if (error1) throw error1
+    database.query(`DELETE FROM registered_staffs WHERE staff_id = '${regno}'`, (error2, results2, fields2) => {
+      if (error2) throw error2
+      
+      res.send({results1,results2})
+      })
     })
   })
 
@@ -92,11 +96,15 @@ router.post('/addstudent', (req,res) => {
 router.post('/removestudent', (req, res) => {
     const regno = req.body.regno
     console.log(req.body);
-    database.query(`DELETE FROM all_students WHERE student_id = '${regno}'`, (error, results, fields) => {
-    if (error) throw error
-      res.send(results)
+    database.query(`DELETE FROM all_students WHERE student_id = '${regno}'`, (error1, results1, fields1) => {
+    if (error1) throw error1
+      database.query(`DELETE FROM registered_students WHERE student_id = '${regno}'`, (error2, results2, fields2) => {
+      if (error2) throw error2
+      
+      res.send({results1,results2})
+      })
     })
-  })
+})
 
 
 //     search staff

@@ -13,8 +13,8 @@ import AddStudent from './pages/AddStudent';
 import RemoveStudent from './pages/RemoveStudent';
 import ActiveQueries from './pages/ActiveQueries';
 import ResolvedQueries from './pages/ResolvedQueries';
-import AllPosts from './components/post/AllPosts';
-import NewPost from './components/post/NewPost';
+import AllPosts from './pages/AllPosts';
+import NewPost from './pages/NewPost';
 
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
         </Route>
       </Routes>
       <ToastContainer 
-        position="top-center"
+        position="bottom-right"
         autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}

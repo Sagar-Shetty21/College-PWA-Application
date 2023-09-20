@@ -2,8 +2,6 @@ import './App.css';
 import '@fortawesome/fontawesome-free/css/all.css'; // Include all icons
 import {React} from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import LogoAnimation from './utils/LogoAnimation';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -41,18 +39,6 @@ function App() {
             <Route path="/chat/availablecontactsforgroup" element={<Layout><AllContactsForGroup/></Layout>}/>
           </Route>
         </Routes>
-        <ToastContainer 
-          position="top-center"
-          autoClose={1200}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored"
-        />
       </div>
   );
 }

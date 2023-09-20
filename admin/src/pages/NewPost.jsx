@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ReactQuill from 'react-quill';
-import './styles.css'
+import './posts.css'
 
 const NewPost = () => {
 
