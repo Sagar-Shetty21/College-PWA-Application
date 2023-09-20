@@ -21,7 +21,7 @@ io.on('connection', (socket) => {
             })
         })
     })
-}) */
+}) */ 
 
 
 router.get('/get_available_contacts', (req, res) => {

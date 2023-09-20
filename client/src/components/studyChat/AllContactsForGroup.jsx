@@ -1,12 +1,13 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { useChatContacts } from '../../context/ChatContactsProvider';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 
 const AllContactsForGroup = () => {
   const { createChatContact, contactsList } = useChatContacts();
   const [selectedContacts, setSelectedContacts] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [groupName, setGroupName] = useState('');
+  const navigate = useNavigate();
 
   const toggleContactSelection = (id, name) => {
     setSelectedContacts(prevSelected => {
@@ -21,7 +22,6 @@ const AllContactsForGroup = () => {
   const createGroupFromSelected = () => {
     // Here you can use the selectedContacts array to create a group
     setIsModalOpen(true);
-    console.log("Selected Contacts:", selectedContacts);
   };
 
   const handleModalClose = () => {
@@ -30,10 +30,13 @@ const AllContactsForGroup = () => {
   };
 
   const handleCreateGroup = () => {
-    // ... your code to create the group with selectedContacts and groupName ...
+    const uniqueValue = new Date().getTime().toString();
+    let groupId = selectedContacts.join('') + uniqueValue;
+    createChatContact(groupId, groupName, selectedContacts)
     setIsModalOpen(false);
-    console.log(groupName)
-    setGroupName(''); // Reset group name
+    setGroupName('');
+    setSelectedContacts([]);
+    navigate(`/chat/${groupId}`)
   };
 
   return (

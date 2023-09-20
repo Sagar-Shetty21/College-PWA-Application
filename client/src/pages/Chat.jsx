@@ -18,7 +18,7 @@ const Chat = () => {
       chatContacts.map((obj) => {
         list.push({
           id: obj.id,
-          avatar: 'https://avatars.githubusercontent.com/u/80540635?v=4',
+          avatar: obj.recipients.length > 1 ? '../assets/group-chat-default.png' : '../assets/user-chat-default.png',
           alt: 'avatar',
           title: obj.name,
           subtitle: "this weekend ?",

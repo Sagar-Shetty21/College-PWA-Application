@@ -41,11 +41,11 @@ export const ChatContactsProvider = ({children}) => {
 
   const [chatContacts, setChatContacts] = useLocalStorage('chat_contacts',contactsList)
 
-  const createChatContact = (id, name) => {
+  const createChatContact = (id, name, recipients) => {
     const isContactExists = chatContacts.some(contact => contact.id === id);
     if (!isContactExists) {
       setChatContacts(prev => {
-          return [...prev, {id, name}]
+          return [...prev, {id, name, recipients}]
       })
     }
   }

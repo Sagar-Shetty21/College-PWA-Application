@@ -3,7 +3,7 @@ import QuoteBox from '../components/home/QuoteBox';
 import './home.css';
 import { Link } from "react-router-dom";
 import Lottie from 'lottie-react';
-import studentsAnimation from '../assets/college_students_animation.json'; 
+import studentsAnimation from '../lotties/college_students_animation.json'; 
 
 
 const Card = (props) => {

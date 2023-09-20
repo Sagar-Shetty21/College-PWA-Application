@@ -9,8 +9,7 @@ const ChatContainer = ({list}) => {
   const navigate = useNavigate();
 
   const handleClick = (id) => {
-    const route = `/chat/${id}`;
-    navigate(route);
+    navigate(`/chat/${id}`);
   }
 
   return (

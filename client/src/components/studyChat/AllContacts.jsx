@@ -8,7 +8,7 @@ const AllContacts = () => {
   const { createChatContact, contactsList, isLoading } = useChatContacts();
 
   const addChatContact = (id, name) => {
-    createChatContact(id, name)
+    createChatContact(id, name, [id])
   }
 
   if(isLoading){
