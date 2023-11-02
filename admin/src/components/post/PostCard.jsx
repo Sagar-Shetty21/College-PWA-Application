@@ -4,7 +4,7 @@ import PopupModal from '../../modals/popupModal';
 const PostCard = ({images, data, setData}) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [active, setActive] = useState(false);
-
+  
 
     const timestamp = data.createdAt;
     const date = new Date(timestamp);

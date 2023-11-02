@@ -28,6 +28,7 @@ export const SharedStateProvider = ({ children }) => {
           const dataArray = data[0].profile_img.data;
           const profileBlob = new Blob([new Uint8Array(dataArray)]);
           const blobUrl = URL.createObjectURL(profileBlob);
+
           setUserProfileImg(blobUrl);
         }else{
           setUserProfileImg("/assets/user-profile-default.jpg")

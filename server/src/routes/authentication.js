@@ -78,10 +78,10 @@ router.get('/getprofileimg', (req,res) => {
         WHERE staff_id = '${id}'
         LIMIT 1    
     `,(err, result) =>{
-        console.log(err)
         if (err) {
             res.status(500).send('Internal Server Error');
         } else {
+            console.log(result)
             res.status(200).send(result);
         }
     })

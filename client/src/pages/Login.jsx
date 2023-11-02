@@ -87,9 +87,9 @@ const Login = () => {
                     </form>
                 </div>
             </div>
-            <div className="login-card-footer">
+            {/* <div className="login-card-footer">
                 <Link to="/resetpassword">Forgot password?</Link>
-            </div>
+            </div> */}
         </div>
         {isLoading && <LoadingScreen />}
     </div>
