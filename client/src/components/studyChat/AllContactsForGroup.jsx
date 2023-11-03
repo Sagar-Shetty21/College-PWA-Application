@@ -47,7 +47,7 @@ const AllContactsForGroup = () => {
             key={obj.id}
             className={`contact-card ${selectedContacts.includes(obj.id) ? 'selected' : ''}`}
           >
-            <img src={obj.avatar} alt="avatar" />
+            <img src="../assets/user-chat-default.png" alt="avatar" />
             <div className="contact-name">{obj.name}</div>
             <div className={obj.section ? "contact-section" : "contact-designation"}>
               {obj.section ? obj.section : obj.designation}

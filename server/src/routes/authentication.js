@@ -71,10 +71,10 @@ router.get('/getprofileimg', (req,res) => {
     const id = req.query.id;
     //search for the user in database
     database.query(`
-        SELECT profile_img FROM registered_students
+        SELECT * FROM registered_students
         WHERE student_id = '${id}'
         UNION
-        SELECT profile_img FROM registered_staffs
+        SELECT * FROM registered_staffs
         WHERE staff_id = '${id}'
         LIMIT 1    
     `,(err, result) =>{

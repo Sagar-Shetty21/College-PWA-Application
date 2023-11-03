@@ -22,7 +22,7 @@ const AllContacts = () => {
           return (
             <Link to={`/chat/${obj.id}`} key={obj.id} onClick={() => addChatContact(obj.id,obj.name)}>
               <div className="contact-card">  
-                <img src={obj.avatar} alt="avatar" />
+                <img src="../assets/user-chat-default.png" alt="avatar" />
                 <div className="contact-name">{obj.name}</div>
                 <div className={obj.section ? "contact-section" : "contact-designation"}>{obj.section ? obj.section : obj.designation}</div>
               </div>

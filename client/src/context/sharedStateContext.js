@@ -26,10 +26,15 @@ export const SharedStateProvider = ({ children }) => {
       .then(data => {
         if (data.length > 0 && data[0].profile_img.data) {
           const dataArray = data[0].profile_img.data;
-          const profileBlob = new Blob([new Uint8Array(dataArray)]);
-          const blobUrl = URL.createObjectURL(profileBlob);
 
-          setUserProfileImg(blobUrl);
+          const buffer = new TextEncoder().encode(dataArray); // Replace 'Hello, World!' with your actual data
+
+          const binary = String.fromCharCode.apply(null, buffer);
+          const base64String = btoa(binary);
+
+          console.log(base64String);
+
+          setUserProfileImg(null);
         }else{
           setUserProfileImg("/assets/user-profile-default.jpg")
         }

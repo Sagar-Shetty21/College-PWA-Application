@@ -13,14 +13,14 @@ const ChatInterface = () => {
         {
         position:"left",
         type:"text",
-        title:"random guy",
-        text:"naam kya hai thumara?",
+        title:"UserName",
+        text:"Hii",
         },
         {
         position:"right",
         type:"text",
-        title:"Punju",
-        text:"Apashyam Kirikiri",
+        title:"Me",
+        text:"Hello there!",
         },
     ])
 
@@ -57,13 +57,13 @@ const ChatInterface = () => {
             <div className="chat-room-info">
                 <div className="chat-avatar">
                     <Avatar
-                        src="https://pbs.twimg.com/profile_images/1287819484321873921/01-qO1Jx_400x400.jpg"
+                        src="../assets/user-chat-default.png"
                         alt="avatar"
                         size="xlarge"
                         type="rounded"
                     />
                 </div>
-                <div className="chat-room-name">Punju</div>
+                <div className="chat-room-name">UserName</div>
             </div>
             <Link to="/chat">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
