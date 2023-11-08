@@ -44,7 +44,7 @@ const ChatInterface = () => {
     const chatData = {
         position:"right",
         type:"text",
-        title:"Punju",
+        title:"Me",
         text:textareaValue,
     }
     setChatData(data => [...data, chatData])
